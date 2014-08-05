@@ -1,7 +1,7 @@
 \documentclass[a4,useAMS,usenatbib,usegraphicx,12pt]{article}
 %External Packages and personalized macros
 \include{latex/macros}
-
+ 
  
 \title{{\textbf{Research Proposal for DAAD PhD scholarship}}\\ The Gaseous Cosmic Web \\ \color{black}\rule{15cm}{0.5mm}}
 \author{Sebastian Bustamante Jaramillo}
@@ -63,6 +63,8 @@ More detailed information of the applicant can be found here \url{http://goo.gl/
 
 %==============================================================================
 \section{Introduction}
+
+
 Since the filamentary nature of the large-scale matter distribution of the 
 observable cosmos (the so-called cosmic web) was evidenced by the first compiled 
 galaxy surveys \citep{Chincarini75, Gregory78, Einasto80M, Einasto80N, 
@@ -82,7 +84,7 @@ neutral hydrogen gas residing in filaments and clusters, and weak gravitational
 lensing and imprints in the CMB field produced by foreground structures have 
 also validated this picture undoubtedly.
 
-
+\
 
 On the theoretical side, early descriptions of the evolution of the large-scale 
 Universe, based on gravitational instabilities in primordial stages and leaded 
@@ -97,12 +99,12 @@ computing systems and ever more efficient numerical algorithms, are acquiring
 an increasingly important role in fathoming the complexity of the large-scale 
 Universe.
 
+\
 
-
-Due to the poorly interacting nature of the dark matter component of the 
-cosmic inventory, observations have been devoted to establish the 
+Due to the poorly interacting (and unknown) nature of the dark matter component 
+of the  cosmic inventory, observations have been devoted to establish the 
 underlying structure of the cosmic web entirely based on detecting baryonic 
-matter (with the exception of non-direct inferences based on weak gravitational
+matter (with the exception of non-direct inferences based on gravitational 
 lensing). On the other hand, the highly complex \textit{gastrophysical} 
 processes involved in baryonic dynamics, i.e. shock heating, photoionization, 
 supernova feedback, stellar wind, radiative cooling, star formation and others, 
@@ -114,15 +116,15 @@ Although this duality between observations and simulations can be thought as a
 complementary situation, actually it also makes quite hard to splice both, 
 observational data and numerical predictions.
 
-
+\
 
 In spite of most of the above-mentioned \textit{gastrophysical} processes 
 occurring in baryonic dynamics do represent a challenge for any endeavour for 
 simulating the large-scale Universe, the merely hydrodynamic nature of the gas
-has been challenging enough even for the most simplified models. Historically,
-two different approaches
-
-
+has been challenging enough even for the most simplified models. Traditionally,
+two different hydro-solvers has been used for astrophysical and 
+cosmological applications, i.e. \textit{Adaptive Mesh Refinement} (AMR) and 
+\textit{Smoothed Particle Hydrodynamics} (SPH).
 
 
 %==============================================================================
@@ -137,7 +139,7 @@ two different approaches
 
 \item[\checkmark] Understanding, at the light of the last generation AREPO 
 simulations, how is the dynamics of the baryonic matter component throughout
-the pipeline set up by the potential well of the dark matter cosmic web.
+the pipeline set up by the potential wells of the dark matter cosmic web.
 
 \item[\checkmark] Quantifying gaseous environmental effects on galaxy formation
 and dynamics.
@@ -155,16 +157,55 @@ and imprints of the gaseous cosmic web.
 %==============================================================================
 
 
+The proposed project is subject to a PhD study and will cover the following 
+aspects
+
+\begin{itemize}
+
+\item[\checkmark] \textit{First, a set of simulations must be established for 
+all succeeding steps. This may involve making new hydrodynamical simulations or 
+adopting existing ones based on the AREPO code. This also includes a complete 
+analysis of the simulations, i.e. characterization of physical fields (density, 
+temperature, entropy), construction and analysis of catalogues of haloes, and
+others.}
+
+\end{itemize}
+
+As this project will be almost entirely based on numerical results, establishing
+a set of precise hydrodynamic simulations as a solid base for all our succeeding
+studies is, indeed, one of the key steps that must be fulfilled. The unprecedented 
+accuracy and convergence achieved by the AREPO code regarding other traditionally 
+used schemes will guarantee the needed precision.
+
+
+In Heidelberg, the required computer facilities and the access to the private 
+code AREPO (of which Prof. Volker Springel is the main author) is granted.
+
+\
+
+\begin{itemize}
+
+\item[\checkmark] \textit{Second, an exploration of the dark-matter cosmic web
+should be done. For this purpose, it is necessary an adaptation of some commonly 
+used web-finding schemes (e.g. the V-web and the T-web) to the new Voronoi-based 
+scheme established by the AREPO code. Once, a characterization of the gas residing
+in the found structures of the cosmic web will be done.}
+
+\end{itemize}
+
+
+
 %==============================================================================
 \section{Expected Results}
 %==============================================================================
 
 
 %==============================================================================
-\section{Bibliography}
+\section{\bibname}
 %==============================================================================
 \bibliographystyle{latex/mn2e}
 \bibliography{references}
+
 
 
 %==============================================================================
