@@ -2,18 +2,17 @@
 %External Packages and personalized macros
 \include{latex/macros}
  
- 
-\title{{\textbf{Research Proposal for DAAD PhD scholarship}}\\ The Gaseous Cosmic Web \\ \color{black}\rule{15cm}{0.5mm}}
+\title{{\textbf{Research Proposal for DAAD PhD scholarship}}\\ The Gaseous Cosmic Web with AREPO\\ \color{black}\rule{15cm}{0.5mm}}
 \author{Sebastian Bustamante Jaramillo}
 \date{}
- 
-\definecolor{lightgray}{gray}{0.8}
-\newcolumntype{L}{>{\raggedleft}p{0.14\textwidth}}
-\newcolumntype{R}{p{0.8\textwidth}}
-\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
   
 \begin{document}
 \maketitle
+\begin{center}
+\includegraphics[trim = 0mm 16cm 0mm 20cm, clip, keepaspectratio=true,
+width=0.7\textheight]{Presentation2.png}
+\tiny{A projection of the ILLUSTRIS simulation (http://www.illustris-project.org/)}
+\end{center}
 \tableofcontents
  
 \newpage 
@@ -45,7 +44,7 @@ More detailed information of the applicant can be found here \url{http://goo.gl/
 
 \subsection*{Information of the Project}
 \begin{tabular}{L!{\VRule}R}
-\bf Title		& \bf The Gaseous Cosmic Web\\
+\bf Title		& \bf The Gaseous Cosmic Web with AREPO\\
 \bf Field		& Cosmology, Astrophysics, Physical Sciences \\
 \bf Advisor 1	& Volker Springel, PhD. Heidelberg Institute for Theoretical Studies (HITS) \& University of Heidelberg, Germany \\
 \bf Advisor 2	& Jaime Forero-Romero, PhD. Universidad de los Andes, Colombia \\
@@ -81,7 +80,7 @@ detail never seen before. In addition, other valuable observational resources
 like X-ray emissions of hot intracluster gas embedded into large clusters of 
 galaxies, Ly-$\alpha$ forest absorption lines in the spectra of shock-heated 
 neutral hydrogen gas residing in filaments and clusters, and weak gravitational 
-lensing and imprints in the CMB field produced by foreground structures have 
+lensing and imprints in the CMB field produced by foreground structures, have 
 also validated this picture undoubtedly.
 
 \
@@ -129,7 +128,7 @@ cosmological applications, i.e. \textit{Adaptive Mesh Refinement} (AMR) and
 
 %==============================================================================
 
-
+\newpage
 %==============================================================================
 \section{Objectives}
 %==============================================================================
@@ -153,12 +152,14 @@ and imprints of the gaseous cosmic web.
 
 
 %==============================================================================
-\section{Methods}
+\section{Methodology}
 %==============================================================================
 
 
 The proposed project is subject to a PhD study and will cover the following 
-aspects
+aspects:
+
+\
 
 \begin{itemize}
 
@@ -172,10 +173,10 @@ others.}
 \end{itemize}
 
 As this project will be almost entirely based on numerical results, establishing
-a set of precise hydrodynamic simulations as a solid base for all our succeeding
+a set of precise hydrodynamical simulations as a solid base for all our succeeding
 studies is, indeed, one of the key steps that must be fulfilled. The unprecedented 
-accuracy and convergence achieved by the AREPO code regarding other traditionally 
-used schemes will guarantee the needed precision.
+accuracy and convergence achieved by the AREPO code, regarding other traditionally 
+used schemes, will guarantee the needed precision.
 
 
 In Heidelberg, the required computer facilities and the access to the private 
@@ -185,32 +186,81 @@ code AREPO (of which Prof. Volker Springel is the main author) is granted.
 
 \begin{itemize}
 
-\item[\checkmark] \textit{Second, an exploration of the dark-matter cosmic web
-should be done. For this purpose, it is necessary an adaptation of some commonly 
-used web-finding schemes (e.g. the V-web and the T-web) to the new Voronoi-based 
-scheme established by the AREPO code. Once, a characterization of the gas residing
-in the found structures of the cosmic web will be done.}
+\item[\checkmark] \textit{Second, an preliminary exploration of the dark matter 
+cosmic web should be done. For this purpose, it is necessary an adaptation of 
+some commonly used web-finding schemes (e.g. the V-web and the T-web) to the 
+new Voronoi-based paradigm established by the AREPO code.}
+
+\end{itemize}
+
+
+A first exploration of the structures of the simulations should be done. For 
+this purpose, many different schemes can be found in the literature, 
+but taking into account the reported success of tensor-based 
+web-finding schemes (e.g. the V-web and the T-web), in which prof. Jaime 
+Forero-Romero has a wide research trajectory, it is quite interesting to 
+quantify the dark matter cosmic web of last generation simulations at the light 
+of them. Nevertheless, it is also necessary to adapt these schemes to the 
+Voronoi-based paradigm leaded by AREPO as they was originally intended for 
+traditionally used Cloud-in-Cell methods for computing the density field.
+It is also worth to mention previous research experiences in this topic of the
+applicant.
+
+\
+
+\begin{itemize}
+
+\item[\checkmark] \textit{Third, once established the underlying dark matter 
+cosmic web, it is necessary to quantify the through gas dynamics. To this aim, 
+inward and outward gas fluxes through potential wells (set by non-linear 
+structures such as clusters and filaments) and accretion rates of the gas 
+component residing within dark matter halos at different redshifts should be 
+computed. At this part, it is enabled to evaluate environmental influences on
+different astrophysical phenomena. }
+
+\end{itemize}
+
+
+In order to exploit the new accuracy provide by the AREPO code, a correct 
+quantification of the gas dynamics should be done. The current cosmological 
+paradigm predicts a complex pipeline set by the potential well of non-linear 
+structures, generally corresponding to clusters and filaments, through which 
+the gas is transported toward over-dense regions like dark matter haloes. This
+process yields to different environmental phenomena of great current interest.
+We list here the most relevant for this project: influence of filament-induced 
+fluxes on star forming galaxies at high redshifts, acquisition of the spin of 
+galaxies through exchanging of angular momentum with the gaseous cosmic web, 
+and kinematical and dynamical effects of the host environment on Local 
+Group-like systems.
+
+\
+
+\begin{itemize}
+
+\item[\checkmark] \textit{Finally, a detailed comparison of our potential 
+predictions (or restrictions) with currently available observational data
+should be done.}
 
 \end{itemize}
 
 
 
 %==============================================================================
-\section{Expected Results}
+\section{Current State}
 %==============================================================================
-
-
-%==============================================================================
-\section{\bibname}
-%==============================================================================
-\bibliographystyle{latex/mn2e}
-\bibliography{references}
-
 
 
 %==============================================================================
 \section{Timetable}
 %==============================================================================
+
+
+%==============================================================================
+\bibliographystyle{latex/mn2e}
+\renewcommand{\bibname}{8\ \ \ \ Bibliography}
+\bibliography{references.bib}
+%==============================================================================
+
 
 
 \end{document}
