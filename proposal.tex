@@ -24,7 +24,7 @@ with AREPO (http://www.illustris-project.org/)}
 \subsection*{Information of the Applicant}
 \begin{tabular}{L!{\VRule}R}
 \bf Name		& Sebastian Bustamante Jaramillo\\
-\bf Degree		& B.Sc. in Physics, Universidad de Antioquia (2012)\\
+\bf Degree		& B.Sc. in Physics, Universidad de Antioquia (2013)\\
 \bf Position	& Adjunct Professor, Universidad de Antioquia\\
 \bf Birthday	& { 20$^{th}$ June, 1990}\\
 \bf Nationality & Colombian\\
@@ -59,7 +59,7 @@ More detailed information of the applicant can be found here \url{http://goo.gl/
 %==============================================================================
 \section{Abstract}
 %==============================================================================
-
+\newpage
 
 %==============================================================================
 \section{Introduction}
@@ -75,14 +75,15 @@ astrophysical phenomena has become evident. At present, a tremendous amount of
 observational data supports the cosmic web scenario at the point that it has 
 become an essential part of the current standard paradigm in cosmology. Last 
 generation galaxy redshift surveys, such as the \textit{two-degree-Field Galaxy 
-Redshift Survey} (2dFGRS) and the \textit{Sloan Digital Sky Survey} (SDSS), do
-evince the intricate and complex structure of the cosmic web at a level of 
-detail never seen before. In addition, other valuable observational resources 
-like X-ray emissions of hot intracluster gas embedded into large clusters of 
-galaxies, Ly-$\alpha$ forest absorption lines in the spectra of shock-heated 
-neutral hydrogen gas residing in filaments and clusters, and weak gravitational 
-lensing and imprints in the CMB field produced by foreground structures, have 
-also validated this picture undoubtedly.
+Redshift Survey} (2dFGRS, see \citet{Colless01} and \citet{Colless03}) and the 
+\textit{Sloan Digital Sky Survey} (SDSS, see \citet{York00} and 
+\citet{Abazajian09}), do evince the intricate and complex structure of the 
+cosmic web at a level of detail never seen before. In addition, other valuable 
+observational resources like X-ray emissions of hot intracluster gas embedded 
+into large clusters of galaxies, Ly-$\alpha$ forest absorption lines in the 
+spectra of shock-heated neutral hydrogen gas residing in filaments and clusters, 
+and weak gravitational lensing and imprints in the CMB field produced by 
+foreground structures, have also validated this picture undoubtedly.
 
 \
 
@@ -118,13 +119,30 @@ observational data and numerical predictions.
 
 \
 
-In spite of most of the above-mentioned \textit{gastrophysical} processes 
+Despite the fact that most of above-mentioned \textit{gastrophysical} processes
 occurring in baryonic dynamics do represent a challenge for any endeavour for 
-simulating the large-scale Universe, the merely hydrodynamic nature of the gas
+simulating the large-scale Universe, the solely hydrodynamic nature of the gas
 has been challenging enough even for the most simplified models. Traditionally,
-two different hydro-solvers has been used for astrophysical and 
-cosmological applications, i.e. \textit{Adaptive Mesh Refinement} (AMR) and 
-\textit{Smoothed Particle Hydrodynamics} (SPH).
+two different hydro-solvers have been used for astrophysical and cosmological 
+applications, i.e. a Lagrangian \textit{Smoothed Particle Hydrodynamics} 
+(\texttt{SPH}) technique \citep{Monaghan92} and an Eulerian solver on a mesh 
+with \textit{Adaptive Mesh Refinement} (\texttt{AMR}) \citep{Berger89}. 
+\texttt{SPH} is easily implemented on a computer and due to its Lagrangian 
+character, it is usage is very suitable for many problems as the mesh follows 
+the evolution of each single particle, however its same Lagrangian nature makes 
+the spatial resolution in simulations inhomogeneous, where some regions will 
+have indeed larger resolutions. This fact makes difficult to account for 
+properties of voids in cosmological simulations and causes suppressions in fluid
+instabilities, therefore this scheme is also poor suitable for capturing shock 
+dynamics. An artificial viscosity is usually implemented for improving the 
+accuracy in these situations. On the other hand, \texttt{AMR} is more efficient
+for capturing shock dynamics without any artificial term, however due to the 
+conservative nature of the hydrodynamical equations, a fixed mesh causes a lack 
+of Galilean invariance, making the computer implementation considerable harder 
+than \texttt{SPH}. Furthermore, due to the unsmooth sampling of physical 
+properties, spurious vorticity is added to the fluid, making the scheme 
+unsuitable for studying turbulent flows (for a further discussion and 
+comparison of both schemes, see \citet{Plewa01}).
 
 
 %==============================================================================
@@ -165,29 +183,33 @@ aspects:
 \begin{itemize}
 
 \item[\checkmark] \textit{First, a set of simulations must be established for 
-all succeeding steps. This may involve making new hydrodynamical simulations or 
+all succeeding steps. This may involve making new hydrodynamical simulations or
 adopting existing ones based on the AREPO code. This also includes a complete 
-analysis of the simulations, i.e. characterization of physical fields (density, 
+analysis of the simulations, i.e. characterization of physical fields (density,
 temperature, entropy), construction and analysis of catalogues of haloes, and
 others.}
 
 \end{itemize}
 
-As this project will be almost entirely based on numerical results, establishing
-a set of precise hydrodynamical simulations as a solid base for all our succeeding
-studies is, indeed, one of the key steps that must be fulfilled. The unprecedented 
-accuracy and convergence achieved by the AREPO code, regarding other traditionally 
-used schemes, will guarantee the needed precision.
+As this project will be almost entirely based on numerical results, 
+establishing a set of precise hydrodynamical simulations as a solid base for 
+all our succeeding studies is indeed one of the key steps that must be 
+fulfilled. The unprecedented accuracy and convergence achieved by the AREPO 
+code regarding other traditionally used schemes, will guarantee the needed 
+precision.
 
 
 In Heidelberg, the required computer facilities and the access to the private 
-code AREPO (of which Prof. Volker Springel is the main author) is granted.
+code AREPO (of which Prof. Volker Springel is the main author) is granted. 
+Moreover, the renowned research trajectory of Prof. Springel in numerical 
+cosmology is certainly another appealing for pursuing this specific PhD 
+project.
 
 \
 
 \begin{itemize}
 
-\item[\checkmark] \textit{Second, an preliminary exploration of the dark matter 
+\item[\checkmark] \textit{Second, a preliminary exploration of the dark matter
 cosmic web should be done. For this purpose, it is necessary an adaptation of 
 some commonly used web-finding schemes (e.g. the V-web and the T-web) to the 
 new Voronoi-based paradigm established by the AREPO code.}
@@ -195,17 +217,17 @@ new Voronoi-based paradigm established by the AREPO code.}
 \end{itemize}
 
 
-A first exploration of the structures of the simulations should be done. For 
+A first exploration of the structures of the simulations should be done. For
 this purpose, many different schemes can be found in the literature, 
 but taking into account the reported success of tensor-based 
 web-finding schemes (e.g. the V-web and the T-web), in which prof. Jaime 
 Forero-Romero has a wide research trajectory, it is quite interesting to 
-quantify the dark matter cosmic web of last generation simulations at the light 
+quantify the dark matter cosmic web of last generation simulations at the light
 of them. Nevertheless, it is also necessary to adapt these schemes to the 
 Voronoi-based paradigm leaded by AREPO as they was originally intended for 
-traditionally used Cloud-in-Cell methods for computing the density field.
-It is also worth to mention previous research experiences in this topic of the
-applicant.
+more traditional \textit{Cloud-in-Cell} methods for estimating the density 
+field. It is also worth mentioning previous research experiences of the 
+applicant in this topic.
 
 \
 
@@ -213,23 +235,23 @@ applicant.
 
 \item[\checkmark] \textit{Third, once established the underlying dark matter 
 cosmic web, it is necessary to quantify the through gas dynamics. To this aim, 
-inward and outward gas fluxes through potential wells (set by non-linear 
+inward and outward gas flows through potential wells (set by non-linear 
 structures such as clusters and filaments) and accretion rates of the gas 
 component residing within dark matter halos at different redshifts should be 
-computed. At this part, it is enabled to evaluate environmental influences on
-different astrophysical phenomena. }
+computed. At this point, it should be possible to evaluate environmental
+influences on different astrophysical phenomena. }
 
 \end{itemize}
 
 
-In order to exploit the new accuracy provide by the AREPO code, a correct 
+In order to exploit the new accuracy provided by the AREPO code, a correct 
 quantification of the gas dynamics should be done. The current cosmological 
 paradigm predicts a complex pipeline set by the potential well of non-linear 
 structures, generally corresponding to clusters and filaments, through which 
 the gas is transported toward over-dense regions like dark matter haloes. This
 process yields to different environmental phenomena of great current interest.
 We list here the most relevant for this project: influence of filament-induced 
-fluxes on star forming galaxies at high redshifts, acquisition of the spin of 
+flows on star forming galaxies at high redshifts, acquisition of the spin of 
 galaxies through exchanging of angular momentum with the gaseous cosmic web, 
 and kinematical and dynamical effects of the host environment on Local 
 Group-like systems.
@@ -262,11 +284,6 @@ numerically studied the preferred place of Local Group-like systems regarding th
 host environment in the cosmic web, also proves the ability of the applicant for
 handling simulations and massive data, a skill that is indeed necessary for 
 carrying out this project.
-
-\
-
-A deeper training in paralleling computing is still needed, however the applicant
-is already working on it.
 
 
 %==============================================================================
