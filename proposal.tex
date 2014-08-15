@@ -125,24 +125,44 @@ simulating the large-scale Universe, the solely hydrodynamic nature of the gas
 has been challenging enough even for the most simplified models. Traditionally,
 two different hydro-solvers have been used for astrophysical and cosmological 
 applications, i.e. a Lagrangian \textit{Smoothed Particle Hydrodynamics} 
-(\texttt{SPH}) technique \citep{Monaghan92} and an Eulerian solver on a mesh 
-with \textit{Adaptive Mesh Refinement} (\texttt{AMR}) \citep{Berger89}. 
-\texttt{SPH} is easily implemented on a computer and due to its Lagrangian 
-character, it is usage is very suitable for many problems as the mesh follows 
-the evolution of each single particle, however its same Lagrangian nature makes 
-the spatial resolution in simulations inhomogeneous, where some regions will 
-have indeed larger resolutions. This fact makes difficult to account for 
-properties of voids in cosmological simulations and causes suppressions in fluid
-instabilities, therefore this scheme is also poor suitable for capturing shock 
-dynamics. An artificial viscosity is usually implemented for improving the 
-accuracy in these situations. On the other hand, \texttt{AMR} is more efficient
-for capturing shock dynamics without any artificial term, however due to the 
-conservative nature of the hydrodynamical equations, a fixed mesh causes a lack 
-of Galilean invariance, making the computer implementation considerable harder 
-than \texttt{SPH}. Furthermore, due to the unsmooth sampling of physical 
-properties, spurious vorticity is added to the fluid, making the scheme 
+(\texttt{SPH}) technique \citep{Monaghan92} (see e.g. the \texttt{GADGET} code, 
+\citet{Springel05}) and an Eulerian solver on a mesh with \textit{Adaptive Mesh 
+Refinement} (\texttt{AMR}) \citep{Berger89} (see e.g. the \texttt{RAMSES} code, 
+\citet{Teyssier02}). \texttt{SPH} is easily implemented on a computer and due to 
+its Lagrangian character, its usage is very suitable for many problems as the 
+mesh follows the evolution of each single particle, with an continuously 
+auto-adjusting resolution. However its same Lagrangian nature causes an 
+inhomogeneous and distorted spatial resolution in simulations. This fact makes 
+difficult to account for properties of voids in cosmological simulations and also 
+causes suppressions in fluid instabilities, making this scheme poor suitable for 
+capturing shock dynamics. An artificial viscosity is usually implemented for 
+improving the accuracy in these situations. On the other hand, \texttt{AMR} is 
+more efficient for capturing shock dynamics without any artificial term, however 
+due to the conservative nature of the hydrodynamical equations, a fixed mesh causes 
+a lack of Galilean invariance, making the computer implementation considerable 
+harder than \texttt{SPH}. Furthermore, due to the unsmooth sampling of physical 
+properties, spurious vorticity is introduced to the fluid, making the scheme 
 unsuitable for studying turbulent flows (for a further discussion and 
 comparison of both schemes, see \citet{Plewa01}).
+
+\
+
+Recently, a completely new paradigm was introduced by \citet{Springel10} that
+combines the strengths of \texttt{AMR} and \texttt{SPH} but overcoming their 
+weaknesses, i.e. the \texttt{AREPO} code. This code is based on moving mesh 
+built from a Voronoi tessellation defined over a set of discrete particles that 
+represents the fluid. This procedure is highly efficient as the geometry of the 
+mesh follows very closely that of the point distribution, avoiding in this way 
+a distorted spatial resolution, but still retaining the auto-adaptivity inherent 
+of the \texttt{SPH} scheme. Unlike \texttt{AMR}, the hydro-solver of 
+\texttt{AREPO} is based on a Gudonov's scheme that guarantee the Galilean 
+invariance and the conservative nature of the solutions. All of these features
+makes \texttt{AREPO} highly efficient and accurate for almost any hydrodynamical
+problem, including shock dynamics as well as fluid instabilities and turbulent 
+flows, essential processes for simulating the high complexity of large-scale 
+structure of the Universe. Computationally speaking, \texttt{AREPO} is 
+considerably time-consuming due to the high 
+
 
 
 %==============================================================================
@@ -155,7 +175,7 @@ comparison of both schemes, see \citet{Plewa01}).
 
 \begin{itemize}
 
-\item[\checkmark] Understanding, at the light of the last generation AREPO 
+\item[\checkmark] Understanding, at the light of the last generation \texttt{AREPO} 
 simulations, how is the dynamics of the baryonic matter component throughout
 the pipeline set up by the potential wells of the dark matter cosmic web.
 
@@ -184,26 +204,26 @@ aspects:
 
 \item[\checkmark] \textit{First, a set of simulations must be established for 
 all succeeding steps. This may involve making new hydrodynamical simulations or
-adopting existing ones based on the AREPO code. This also includes a complete 
-analysis of the simulations, i.e. characterization of physical fields (density,
-temperature, entropy), construction and analysis of catalogues of haloes, and
-others.}
+adopting existing ones based on the \texttt{AREPO} code. This also includes a 
+complete analysis of the simulations, i.e. characterization of physical fields 
+(density, temperature, entropy), construction and analysis of catalogues of 
+haloes, and others.}
 
 \end{itemize}
 
 As this project will be almost entirely based on numerical results, 
 establishing a set of precise hydrodynamical simulations as a solid base for 
 all our succeeding studies is indeed one of the key steps that must be 
-fulfilled. The unprecedented accuracy and convergence achieved by the AREPO 
-code regarding other traditionally used schemes, will guarantee the needed 
-precision.
+fulfilled. The unprecedented accuracy and convergence achieved by the 
+\texttt{AREPO} code regarding other traditionally used schemes, will guarantee 
+the needed precision.
 
 
 In Heidelberg, the required computer facilities and the access to the private 
-code AREPO (of which Prof. Volker Springel is the main author) is granted. 
-Moreover, the renowned research trajectory of Prof. Springel in numerical 
-cosmology is certainly another appealing for pursuing this specific PhD 
-project.
+code \texttt{AREPO} (of which Prof. Volker Springel is the main author) is 
+granted. Moreover, the renowned research trajectory of Prof. Springel in 
+numerical cosmology is certainly another appealing for pursuing this specific 
+PhD project.
 
 \
 
@@ -212,7 +232,7 @@ project.
 \item[\checkmark] \textit{Second, a preliminary exploration of the dark matter
 cosmic web should be done. For this purpose, it is necessary an adaptation of 
 some commonly used web-finding schemes (e.g. the V-web and the T-web) to the 
-new Voronoi-based paradigm established by the AREPO code.}
+new Voronoi-based paradigm established by the \texttt{AREPO} code.}
 
 \end{itemize}
 
@@ -224,8 +244,8 @@ web-finding schemes (e.g. the V-web and the T-web), in which prof. Jaime
 Forero-Romero has a wide research trajectory, it is quite interesting to 
 quantify the dark matter cosmic web of last generation simulations at the light
 of them. Nevertheless, it is also necessary to adapt these schemes to the 
-Voronoi-based paradigm leaded by AREPO as they was originally intended for 
-more traditional \textit{Cloud-in-Cell} methods for estimating the density 
+Voronoi-based paradigm leaded by \texttt{AREPO} as they was originally intended 
+for more traditional \textit{Cloud-in-Cell} methods for estimating the density 
 field. It is also worth mentioning previous research experiences of the 
 applicant in this topic.
 
@@ -244,16 +264,16 @@ influences on different astrophysical phenomena. }
 \end{itemize}
 
 
-In order to exploit the new accuracy provided by the AREPO code, a correct 
-quantification of the gas dynamics should be done. The current cosmological 
-paradigm predicts a complex pipeline set by the potential well of non-linear 
-structures, generally corresponding to clusters and filaments, through which 
-the gas is transported toward over-dense regions like dark matter haloes. This
-process yields to different environmental phenomena of great current interest.
-We list here the most relevant for this project: influence of filament-induced 
-flows on star forming galaxies at high redshifts, acquisition of the spin of 
-galaxies through exchanging of angular momentum with the gaseous cosmic web, 
-and kinematical and dynamical effects of the host environment on Local 
+In order to exploit the new accuracy provided by the \texttt{AREPO} code, a 
+correct quantification of the gas dynamics should be done. The current 
+cosmological paradigm predicts a complex pipeline set by the potential well of 
+non-linear structures, generally corresponding to clusters and filaments, 
+through which the gas is transported toward over-dense regions like dark matter 
+haloes. This process yields to different environmental phenomena of great current 
+interest. We list here the most relevant for this project: influence of 
+filament-induced flows on star forming galaxies at high redshifts, acquisition of 
+the spin of galaxies through exchanging of angular momentum with the gaseous 
+cosmic web, and kinematical and dynamical effects of the host environment on Local 
 Group-like systems.
 
 \
