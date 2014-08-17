@@ -62,98 +62,93 @@ More detailed information of the applicant can be found here \url{http://goo.gl/
 
 
 The filamentary nature of the large-scale matter distribution (the so-called 
-cosmic web) is one of the most striking features of Universe, being an 
-essential part of the current standard paradigm in cosmology. Last generation 
-galaxy redshift surveys, such as the \textit{two-degree-Field Galaxy Redshift 
-Survey} (2dFGRS, see \citet{Colless03}) and the \textit{Sloan Digital Sky 
-Survey} (SDSS, see \citet{Abazajian09}), reveal the cosmic web at a level of 
-detail never seen before. In addition, other observational probes like X-ray 
-emissions from distant quasars, the Ly-$\alpha$ forest, and weak gravitational 
-lensing have also validated this picture undoubtedly.
+cosmic web) is one of the most striking features of Universe \citep{Bond96}, 
+being an essential part of the current standard paradigm in cosmology. Last 
+generation galaxy redshift surveys, such as the \textit{two-degree-Field Galaxy 
+Redshift Survey} (2dFGRS, see \citet{Colless03}) and the \textit{Sloan Digital 
+Sky Survey} (SDSS, see \citet{Abazajian09}), reveal the cosmic web at a level 
+of detail never seen before. In addition, other observational probes like the 
+Ly-$\alpha$ forest in distant quasars \citep{Rauch98, Cantalupo14}, 
+fluorescence emissions \citep{Cantalupo12} and weak gravitational lensing 
+\citep{Massey07, Dietrich12} have also validated this picture undoubtedly.
 
 \
 
 On the theoretical side, early descriptions of the evolution of the large-scale
 Universe, based on gravitational instabilities in primordial stages and leaded 
-by the seminal work of \citet{Zeldovich70}, predict the cosmic web picture 
-\citep{Bond96}. Since then, our understanding of the structure and dynamics of 
-the cosmic web has been dramatically improved as new and more powerful 
-theoretical and computational tools and better observational data become 
-available. In particular, N-body simulations, fuelled by last generation 
-computing systems and ever more efficient numerical algorithms, have an 
-increasingly important role in revealing the complexity of the large-scale 
-Universe.
+by the seminal work of \citet{Zeldovich70}, predict the cosmic web picture. 
+Since then, our understanding of the structure and dynamics of the cosmic web 
+has been dramatically improved as new and more powerful theoretical and 
+computational tools and better observational data become available. In 
+particular, N-body simulations, fuelled by last generation computing systems 
+and ever more efficient numerical algorithms, have an increasingly important 
+role in revealing the complexity of the large-scale Universe.
 
 \
 
-In the $\Lambda$CDM cosmological model there are two different types of 
-matter, i.e. the baryonic or luminous matter, corresponding to what we can see, 
-and the poorly interacting (and of a still unknown nature) dark matter. The 
-current measured abundances indicate a proportion approximately of 6 to 1 
-between dark and baryonic matter \citep{Planck13XVI}. Accordingly, most of the 
-related numerical research has been made based on dark matter-only N-body 
-simulations, where the gas dynamics has been neglected. Nevertheless, recent
-studies in filamentary gas accretion in high redsfhit galaxies based on 
-simulations \citep{Dekel09} and 
+In the current cosmological paradigm, the $\Lambda$CDM model, there are two 
+different types of matter, i.e. baryonic or luminous matter, corresponding 
+to what we can see, and the poorly interacting (and of a still unknown nature) 
+dark matter. The most actual measurements of their abundances indicate a 
+proportion approximately of 1 to 6, respectively \citep{Planck13XVI}. 
+Accordingly, most of the related numerical research has been made based on 
+dark matter-only N-body simulations, where the gas dynamics has been 
+neglected (for a very detailed numerical analysis of the dark matter cosmic 
+web, see \citet{Cautun14}). Nevertheless, recent simulation studies in 
+filamentary gas accretion in high redsfhit galaxies \citep{Dekel09}, 
+large-scale orientation and alignment of the spin of galaxies with they 
+embedding cosmic web \citep{Hahn10}, and filamentary-induced exchange of 
+galaxy angular momentum \citep{Dubois14}, have proven the need of using 
+fully hydrodynamical cosmological simulations due to the high level of coupling
+between dark and baryonic matter.
 
 \
 
-
-. On the other hand, the highly complex \textit{gastrophysical} 
-processes involved in baryonic dynamics, i.e. shock heating, photoionization, 
-supernova feedback, stellar wind, radiative cooling, star formation and others, 
-make extremely difficult to obtain a completely consistent and reliable scenario 
-from numerical simulations as many of these processes are not fully understood 
-yet. 
-Although this duality between observations and simulations can be thought as a 
-complementary situation, actually it also makes quite hard to splice both, 
-observational data and numerical predictions.
-
-\
-
-Despite the fact that most of above-mentioned \textit{gastrophysical} processes
-occurring in baryonic dynamics do represent a challenge for any endeavour for 
-simulating the large-scale Universe, the solely hydrodynamic nature of the gas
-has been challenging enough even for the most simplified models. Traditionally,
-two different hydro-solvers have been used for astrophysical and cosmological 
-applications, i.e. a Lagrangian \textit{Smoothed Particle Hydrodynamics} 
-(\texttt{SPH}) technique \citep{Monaghan92} (see e.g. the \texttt{GADGET} code, 
-\citet{Springel05}) and an Eulerian solver on a mesh with \textit{Adaptive Mesh 
-Refinement} (\texttt{AMR}) \citep{Berger89} (see e.g. the \texttt{RAMSES} code, 
-\citet{Teyssier02}). \texttt{SPH} is easily implemented on a computer and due to 
-its Lagrangian character, its usage is very suitable for many problems as the 
-mesh follows the evolution of each single particle, with an continuously 
-auto-adjusting resolution. However its same Lagrangian nature causes an 
-inhomogeneous and distorted spatial resolution in simulations. This fact makes 
-difficult to account for properties of voids in cosmological simulations and also 
-causes suppressions in fluid instabilities, making this scheme poor suitable for 
-capturing shock dynamics. An artificial viscosity is usually implemented for 
-improving the accuracy in these situations. On the other hand, \texttt{AMR} is 
-more efficient for capturing shock dynamics without any artificial term, however 
-due to the conservative nature of the hydrodynamical equations, a fixed mesh causes 
-a lack of Galilean invariance, making the computer implementation considerable 
-harder than \texttt{SPH}. Furthermore, due to the unsmooth sampling of physical 
-properties, spurious vorticity is introduced to the fluid, making the scheme 
-unsuitable for studying turbulent flows (for a further discussion and 
-comparison of both schemes, see \citet{Plewa01}).
+Incorporating gas dynamics into cosmological simulations is far from an easy 
+task. The first reason is the highly complex \textit{gastrophysical} processes 
+involved in baryonic dynamics, i.e. shock heating, photoionization, supernova 
+feedback, stellar wind, radiative cooling, star formation \citep{Bond93}. The
+second reason is the complexity of the hydrodynamical equations followed by 
+the gas. Traditionally, two different hydro-solvers have been used for this 
+task, i.e. a Lagrangian \textit{Smoothed Particle Hydrodynamics} (\texttt{SPH}) 
+technique \citep{Monaghan92} (for an implementation, see e.g. the \texttt{GADGET} 
+code by \citet{Springel05}) and an Eulerian solver on a mesh with \textit{
+Adaptive Mesh Refinement} (\texttt{AMR}) \citep{Berger89} (for an implementation, 
+see e.g. the \texttt{RAMSES} code by \citet{Teyssier02}). 
 
 \
 
-Recently, a completely new paradigm was introduced by \citet{Springel10} that
-combines the strengths of \texttt{AMR} and \texttt{SPH} but overcoming their 
-weaknesses, i.e. the \texttt{AREPO} code. This code is based on moving mesh 
-built from a Voronoi tessellation defined over a set of discrete particles that 
-represents the fluid. This procedure is highly efficient as the geometry of the 
-mesh follows very closely that of the point distribution, avoiding in this way 
-a distorted spatial resolution, but still retaining the auto-adaptivity inherent 
-of the \texttt{SPH} scheme. Unlike \texttt{AMR}, the hydro-solver of 
-\texttt{AREPO} is based on a Gudonov's scheme that guarantee the Galilean 
-invariance and the conservative nature of the solutions. All of these features
-makes \texttt{AREPO} highly efficient and accurate for almost any hydrodynamical
-problem, including shock dynamics as well as fluid instabilities and turbulent 
-flows, essential processes for simulating the high complexity of large-scale 
-structure of the Universe. Computationally speaking, \texttt{AREPO} is 
-considerably time-consuming due to the high 
+The \texttt{SPH} scheme is easily implemented on a computer due to its 
+Lagrangian character. Furthermore, as the mesh follows the evolution of each 
+single particle and has a continuously auto-adjusting resolution, its usage is 
+very suitable for problems like turbulent flows. However, its same Lagrangian 
+nature originates an inhomogeneous and distorted spatial resolution, what makes 
+difficult to account for low density regions in simulations and causes 
+suppressions in fluid instabilities, making it poor suitable for capturing shock
+dynamics. An artificial viscosity term is usually introduced for improving the 
+accuracy in these situations. On the other hand, \texttt{AMR} is more efficient 
+for capturing shock dynamics. However, due to the conservative nature of the 
+hydrodynamical equations, a fixed mesh causes a lack of Galilean invariance, 
+making the computer implementation considerable harder. Furthermore, the 
+unsmooth sampling of physical properties introduces spurious vorticity to the 
+fluid, making the scheme unsuitable for studying turbulent flows (for a further
+discussion and comparison of both schemes, see \citet{Plewa01}).
+
+\
+
+Recently, a completely new paradigm was introduced by \citet{Springel10} and 
+implemented in the \texttt{AREPO} code. It combines the strengths of 
+\texttt{AMR} and \texttt{SPH} but overcoming their weaknesses. This code uses 
+a moving mesh based on a Voronoi tessellation defined over a set of particles
+that represents the fluid. The geometry of the mesh resembles very closely that 
+of the point distribution, avoiding a distorted spatial resolution and retaining 
+the auto-adaptivity inherent of \texttt{SPH}. Unlike \texttt{AMR}, the 
+hydro-solver of \texttt{AREPO} is based on a Gudonov's scheme that guarantees the
+Galilean invariance and the conservative nature of the solutions. All of these 
+features makes \texttt{AREPO} highly efficient and accurate for simulating a 
+plethora of hydrodynamical problems, even including those where \texttt{AMR} and
+\texttt{SPH} fail separately. Hence \texttt{AREPO} is a very attractive approach 
+for computing fully hydrodynamical simulations of the large-scale Universe.
 
 
 
@@ -167,15 +162,13 @@ considerably time-consuming due to the high
 
 \begin{itemize}
 
-\item[\checkmark] Understanding, at the light of the last generation \texttt{AREPO} 
-simulations, how is the dynamics of the baryonic matter component throughout
-the pipeline set up by the potential wells of the dark matter cosmic web.
+\item[\checkmark] Study gaseous filamentary accretion of the cosmic web using 
+\texttt{AREPO} simulations.
 
-\item[\checkmark] Quantifying gaseous environmental effects on galaxy formation
-and dynamics.
+\item[\checkmark] Quantify the impact of gaseous filamentary accretion on galaxy 
+evolution.
 
-\item[\checkmark] Comparing our results with current (predicting new) observables 
-and imprints of the gaseous cosmic web.
+\item[\checkmark] Deriving observable quantities from our theoretical studies.
 
 
 \end{itemize}
@@ -194,52 +187,41 @@ aspects:
 
 \begin{itemize}
 
-\item[\checkmark] \textit{First, a set of simulations must be established for 
-all succeeding steps. This may involve making new hydrodynamical simulations or
-adopting existing ones based on the \texttt{AREPO} code. This also includes a 
-complete analysis of the simulations, i.e. characterization of physical fields 
-(density, temperature, entropy), construction and analysis of catalogues of 
-haloes, and others.}
+\item[\checkmark] \textit{First, an analysis and characterization of existing 
+hydrodynamical simulations based on the \texttt{AREPO} code will be done.}
 
 \end{itemize}
 
-As this project will be almost entirely based on numerical results, 
-establishing a set of precise hydrodynamical simulations as a solid base for 
-all our succeeding studies is indeed one of the key steps that must be 
-fulfilled. The unprecedented accuracy and convergence achieved by the 
-\texttt{AREPO} code regarding other traditionally used schemes, will guarantee 
-the needed precision.
+As this project will be entirely based on numerical results, an analysis and 
+characterization of existing \texttt{AREPO} hydrodynamical simulations is one 
+of the key steps; the achieved unprecedented accuracy will guarantee a proper 
+description of the simulated Universe.
 
 
-In Heidelberg, the required computer facilities and the access to the private 
-code \texttt{AREPO} (of which Prof. Volker Springel is the main author) is 
-granted. Moreover, the renowned research trajectory of Prof. Springel in 
-numerical cosmology is certainly another appealing for pursuing this specific 
-PhD project.
+This step includes a quantification of the dark matter and the gaseous cosmic
+web through two different web finding schemes (i.e. the T-web based on the 
+tidal tensor \citep{Hahn07,Forero09}, and the V-web based on the velocity shear
+tensor \citep{Hoffman12}, schemes in which prof. Jaime Forero-Romero has a wide 
+research trajectory); thus voids, walls, filaments and clusters will be 
+identified. Then, a statistical analysis of the found structures will be done, 
+i.e. volume and mass filling fractions at different redshifts, morphology, halo 
+populations and filamentary accretion of gas.
+
+In Heidelberg, the required computer facilities and the access to existing 
+\texttt{AREPO} simulations and the private code (of which Prof. Volker 
+Springel is the main author) is granted. Moreover, the renowned research 
+trajectory and the expertise of Prof. Springel in numerical cosmology is 
+certainly another appealing for pursuing this specific PhD project.
 
 \
 
 \begin{itemize}
 
-\item[\checkmark] \textit{Second, a preliminary exploration of the dark matter
-cosmic web should be done. For this purpose, it is necessary an adaptation of 
-some commonly used web-finding schemes (e.g. the V-web and the T-web) to the 
-new Voronoi-based paradigm established by the \texttt{AREPO} code.}
+\item[\checkmark] \textit{Second, detailed simulations of specific process at
+high redshifts will be computed.}
 
 \end{itemize}
 
-
-A first exploration of the structures of the simulations should be done. For
-this purpose, many different schemes can be found in the literature, 
-but taking into account the reported success of tensor-based 
-web-finding schemes (e.g. the V-web and the T-web), in which prof. Jaime 
-Forero-Romero has a wide research trajectory, it is quite interesting to 
-quantify the dark matter cosmic web of last generation simulations at the light
-of them. Nevertheless, it is also necessary to adapt these schemes to the 
-Voronoi-based paradigm leaded by \texttt{AREPO} as they was originally intended 
-for more traditional \textit{Cloud-in-Cell} methods for estimating the density 
-field. It is also worth mentioning previous research experiences of the 
-applicant in this topic.
 
 \
 
@@ -268,16 +250,6 @@ the spin of galaxies through exchanging of angular momentum with the gaseous
 cosmic web, and kinematical and dynamical effects of the host environment on Local 
 Group-like systems.
 
-\
-
-\begin{itemize}
-
-\item[\checkmark] \textit{Finally, a detailed comparison of our potential 
-predictions (or restrictions) with currently available observational data
-should be done.}
-
-\end{itemize}
-
 
 
 %==============================================================================
@@ -285,18 +257,30 @@ should be done.}
 %==============================================================================
 
 
-At present, the applicant has already the fundamental basis in Astrophysics and
+At present the applicant has already the fundamental basis in Astrophysics and
 Cosmology required for this investigation. This can be confirmed by his research 
 trajectory, including a paper (as co-author) published in \textit{ApJL} in which 
-was studied the kinematics of the Local Group in a cosmological context, and some
+was studied the kinematics of the Local Group in a cosmological context, another 
+paper (as co-author) published in \textit{ApJ} where was studied the influence 
+of thermal evolution in the magnetic habitability of rocky planets, and some 
 participations in academic congresses. Furthermore, a Bachelor's thesis
-\footnote{Further information and an electronic version of this 
-thesis can be found here \url{https://github.com/sbustamante/Thesis}.}, where was 
-numerically studied the preferred place of Local Group-like systems regarding the 
-host environment in the cosmic web, also proves the ability of the applicant for
-handling simulations and massive data, a skill that is indeed necessary for 
-carrying out this project.
+\footnote{Further information and an electronic version of this thesis can be 
+found here \url{https://github.com/sbustamante/Thesis}.} where was studied the 
+preferred place of simulated Local Group-like systems regarding the host 
+environment in the cosmic web, also proves the ability of the applicant for 
+handling simulations and massive data, a skill that is necessary for carrying 
+out this project.
 
+\
+
+Currently, the applicant is involved in two research projects: first, a new 
+method for finding voids in simulations based on the local fractional 
+anisotropy. An ongoing publication (as first author) related to this is close 
+to be submitted. \footnote{Information of this paper can be found here 
+\url{https://github.com/sbustamante/CosmicVoidsPaper}.}. The second project is
+about a comparison of three simulation techniques, i.e. \texttt{SPH} vs 
+\texttt{VPH} vs \texttt{AREPO}, with possible publishable results at the end of
+the present year.
 
 %==============================================================================
 \section{Timetable}
