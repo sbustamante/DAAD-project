@@ -2,7 +2,9 @@
 %External Packages and personalized macros
 \include{latex/macros}
  
-\title{{\textbf{Research Proposal for a DAAD PhD scholarship}}\\ The Gaseous Cosmic Web with AREPO\\ \color{black}\rule{15cm}{0.5mm}}
+\title{{\textbf{Research Proposal for a DAAD PhD scholarship}}\\ 
+				The Gaseous Cosmic Web with AREPO\\ 
+				\color{black}\rule{15cm}{0.5mm}}
 \author{Sebastian Bustamante Jaramillo}
 \date{}
   
@@ -11,7 +13,7 @@
 \begin{center}
 \includegraphics[trim = 0mm 3.5cm 0mm 3.0cm, clip, keepaspectratio=true,
 width=0.7\textheight]{Presentation1.png}
-\tiny{A projection of the cosmic web in the ILLUSTRIS simulation, that was made 
+\tiny{A projection of the cosmic web in the ILLUSTRIS simulation, that was made
 with AREPO (http://www.illustris-project.org/)}
 \end{center}
 \tableofcontents
@@ -47,8 +49,9 @@ More detailed information of the applicant can be found here \url{http://goo.gl/
 \begin{tabular}{L!{\VRule}R}
 \bf Title		& \bf The Gaseous Cosmic Web with AREPO\\
 \bf Field		& Cosmology, Astrophysics, Physical Sciences \\
-\bf Advisor 1	& Volker Springel, PhD. Heidelberg Institute for Theoretical Studies (HITS) \& University of Heidelberg, Germany \\
-\bf Advisor 2	& Jaime Forero-Romero, PhD. Universidad de los Andes, Colombia \\
+\bf Advisor 1	& Professor Volker Springel. Heidelberg Institute for Theoretical Studies (HITS) 
+\& University of Heidelberg, Germany \\
+\bf Advisor 2	& Professor Jaime Forero-Romero, PhD. Universidad de los Andes, Colombia \\
 \bf University	& University of Heidelberg, IMPRS PhD program \\
 \bf Time Frame	& 3 years \\
 \end{tabular}
@@ -61,19 +64,20 @@ More detailed information of the applicant can be found here \url{http://goo.gl/
 %==============================================================================
 
 
-The cosmic web is one the most striking features of the Universe, being predicted
-by theory, widely tested by observations and studied through simulations. 
-Currently, dark matter-only simulations is one of the best tools we have for 
-understanding the cosmic web. Nevertheless, recent works about filamentary gas 
-accretion, acquisition of angular momentum of galaxies and spin orientation have
-proven the need of using full hydrodynamic simulations. Incorporating gas dynamics
-in simulations is far from an easy task, and traditionally used hydro-solvers
-present important accuracy problems. Recently, a completely new paradigm was 
-implemented in the \texttt{AREPO} code, which combines the strength of previous
-schemes and overcomes their weaknesses, making it a very attractive choice for 
-simulating the large-scale Universe. Despite this, no much work has been done in 
-studying the gaseous cosmic web and its impact on astrophysical processes through
-\texttt{AREPO} simulations, so that is the main objective of this PhD project.
+The cosmic web is one the most striking features of the Universe, being 
+predicted by theory, widely tested by observations and studied through 
+simulations. Currently, dark matter-only simulations is one of the best tools 
+we have for understanding the cosmic web. Nevertheless, recent works about 
+filamentary gas accretion, acquisition of angular momentum of galaxies and spin 
+orientation have proven the need of using full hydrodynamic simulations. 
+Incorporating gas dynamics in simulations is far from an easy task, and 
+traditionally used hydro-solvers present important accuracy problems. Recently, 
+a completely new paradigm was implemented in the \texttt{AREPO} code, which 
+combines the strength of previous schemes and overcomes their weaknesses, making
+it a very attractive choice for simulating the large-scale Universe. Despite 
+this, no much work has been done in studying the gaseous cosmic web and its 
+impact on galaxy evolution using \texttt{AREPO} simulations, so that is the 
+main objective of this PhD project.
 
 
 
@@ -88,9 +92,9 @@ cosmic web) is one of the most striking features of Universe \citep{Bond96},
 being an essential part of the current standard paradigm in cosmology. Last 
 generation galaxy redshift surveys, such as the \textit{two-degree-Field Galaxy 
 Redshift Survey} (2dFGRS, see \citet{Colless03}) and the \textit{Sloan Digital 
-Sky Survey} (SDSS, see \citet{Abazajian09}), reveal the cosmic web at a level 
-of detail never seen before. In addition, other observational probes like the 
-Ly-$\alpha$ forest in distant quasars \citep{Rauch98, Cantalupo14}, 
+Sky Survey} (SDSS, see \citet{Abazajian09}), have revealed the cosmic web at a 
+level of detail never seen before. In addition, other observational probes like
+the Ly-$\alpha$ forest in distant quasars \citep{Rauch98, Cantalupo14}, 
 fluorescence emissions \citep{Cantalupo12} and weak gravitational lensing 
 \citep{Massey07, Dietrich12} have also validated this picture undoubtedly.
 
@@ -184,11 +188,11 @@ for computing fully hydrodynamical simulations of the large-scale Universe.
 
 \begin{itemize}
 
-\item[\checkmark] Study gaseous filamentary accretion of the cosmic web using 
+\item[\checkmark] Studying gaseous filamentary accretion of the cosmic web using 
 \texttt{AREPO} simulations.
 
-\item[\checkmark] Quantify the impact of gaseous filamentary accretion on galaxy 
-evolution.
+\item[\checkmark] Quantifying the impact of gaseous filamentary accretion on 
+galaxy evolution.
 
 \item[\checkmark] Deriving observable quantities from our theoretical studies.
 
@@ -205,7 +209,6 @@ evolution.
 The proposed project is subject to a PhD study and will cover the following 
 aspects:
 
-\
 
 \begin{itemize}
 
@@ -214,28 +217,26 @@ hydrodynamical simulations based on the \texttt{AREPO} code will be done.}
 
 \end{itemize}
 
+
 As this project will be entirely based on numerical results, an analysis and 
 characterization of existing \texttt{AREPO} hydrodynamical simulations is one 
-of the key steps; the achieved unprecedented accuracy will guarantee a proper 
-description of the simulated Universe.
+of the key steps. This includes a quantification of the dark matter and the 
+gaseous cosmic web through two different web finding schemes (i.e. the T-web 
+based on the tidal tensor \citep{Hahn07,Forero09}, and the V-web based on the 
+velocity shear tensor \citep{Hoffman12}, schemes in which prof. Jaime 
+Forero-Romero has a wide research trajectory); thus voids, walls, filaments 
+and clusters will be identified. Then, a statistical analysis of the found 
+structures will be carried out, i.e. volume and mass filling fractions at 
+different redshifts, morphology, halo populations and filamentary accretion of 
+gas.
 
 
-This step includes a quantification of the dark matter and the gaseous cosmic
-web through two different web finding schemes (i.e. the T-web based on the 
-tidal tensor \citep{Hahn07,Forero09}, and the V-web based on the velocity shear
-tensor \citep{Hoffman12}, schemes in which prof. Jaime Forero-Romero has a wide 
-research trajectory); thus voids, walls, filaments and clusters will be 
-identified. Then, a statistical analysis of the found structures will be done, 
-i.e. volume and mass filling fractions at different redshifts, morphology, halo 
-populations and filamentary accretion of gas.
-
-In Heidelberg, the required computer facilities and the access to existing 
-\texttt{AREPO} simulations and the private code (of which Prof. Volker 
+In Heidelberg, the required computer facilities and access to existing 
+simulations and the private \texttt{AREPO} code (of which Prof. Volker 
 Springel is the main author) is granted. Moreover, the renowned research 
-trajectory and the expertise of Prof. Springel in numerical cosmology is 
+trajectory and expertise of Prof. Springel in numerical cosmology is 
 certainly another appealing for pursuing this specific PhD project.
 
-\
 
 \begin{itemize}
 
@@ -245,33 +246,26 @@ high redshifts will be computed.}
 \end{itemize}
 
 
-\
+Once analysed the gaseous cosmic web, we proceed to compute its impact on 
+galaxy evolution, specially at high-redshifts due to the big amount of 
+available observational constrains. This step involves computing new high 
+resolution \texttt{AREPO} simulations in order to study specific processes 
+like: star formation rate enhanced by filamentary gas accretion, angular 
+momentum exchange between galaxies and the cosmic web, spin orientation of 
+galaxies along filaments and walls.
+
 
 \begin{itemize}
 
-\item[\checkmark] \textit{Third, once established the underlying dark matter 
-cosmic web, it is necessary to quantify the through gas dynamics. To this aim, 
-inward and outward gas flows through potential wells (set by non-linear 
-structures such as clusters and filaments) and accretion rates of the gas 
-component residing within dark matter halos at different redshifts should be 
-computed. At this point, it should be possible to evaluate environmental
-influences on different astrophysical phenomena. }
+\item[\checkmark] \textit{Third, new observables will be derived based on the
+results of the simulations. }
 
 \end{itemize}
 
 
-In order to exploit the new accuracy provided by the \texttt{AREPO} code, a 
-correct quantification of the gas dynamics should be done. The current 
-cosmological paradigm predicts a complex pipeline set by the potential well of 
-non-linear structures, generally corresponding to clusters and filaments, 
-through which the gas is transported toward over-dense regions like dark matter 
-haloes. This process yields to different environmental phenomena of great current 
-interest. We list here the most relevant for this project: influence of 
-filament-induced flows on star forming galaxies at high redshifts, acquisition of 
-the spin of galaxies through exchanging of angular momentum with the gaseous 
-cosmic web, and kinematical and dynamical effects of the host environment on Local 
-Group-like systems.
-
+At this point, we will compare our theoretical results with available 
+observational data of the cosmic web, specially at high redshifts. This step 
+will also involve deriving new observables based on our predictions.
 
 
 %==============================================================================
@@ -280,31 +274,33 @@ Group-like systems.
 
 
 At present the applicant has already the fundamental basis in Astrophysics and
-Cosmology required for this investigation. This can be confirmed by his research 
+Cosmology required for this investigation. This can be confirmed by his research
 trajectory, including a paper (as co-author) published in the \textit{ApJL} in 
 which was studied the kinematics of the Local Group in a cosmological context, 
-another paper (as co-author) published in the \textit{ApJ} where was studied the 
-influence of thermal evolution in the magnetic habitability of rocky planets, and 
-some participations in academic congresses. Furthermore, a Bachelor's thesis
-\footnote{Further information and an electronic version of this thesis can be 
-found here \url{https://github.com/sbustamante/Thesis}.} where was studied the 
-preferred place of simulated Local Group-like systems in the cosmic web, also 
-proves the ability of the applicant for handling simulations and massive data, 
-a skill that is necessary for carrying out this project.
+another paper (as co-author) published in the \textit{ApJ} where was studied 
+the influence of thermal evolution in the magnetic habitability of rocky planets, 
+and some participations in academic congresses. Furthermore, a Bachelor's thesis
+\footnote{\scriptsize Further information and an electronic version of this 
+thesis can be found here \url{https://github.com/sbustamante/Thesis}.} where was 
+studied the preferred place of simulated Local Group-like systems in the cosmic 
+web, also proves the ability of the applicant for handling simulations and massive 
+data, a skill that is necessary for carrying out this project.
 
 \
 
 Currently, the applicant is also involved in two research projects: first, a 
 new method for finding voids in simulations based on the local fractional 
-anisotropy. An ongoing publication (as first author) related to this is close 
-to be submitted. \footnote{Information of this paper can be found here 
-\url{https://github.com/sbustamante/CosmicVoidsPaper}.}. The second project is
-about a comparison of three simulation techniques, i.e. \texttt{SPH} vs 
+anisotropy. An ongoing publication (as first author) related to this is about 
+to be submitted. \footnote{\scriptsize Information of this paper can be found 
+here \url{https://github.com/sbustamante/CosmicVoidsPaper}.}. The second project
+involves a comparison of three simulation techniques, i.e. \texttt{SPH} vs 
 \texttt{VPH} vs \texttt{AREPO}, with possible publishable results at the end of
-the present year.
+the present year \footnote{\scriptsize Further information in  
+\url{https://github.com/sbustamante/MethodsComparison}.}.
+
 
 %==============================================================================
-\section{Timetable}
+\section{Schedule}
 %==============================================================================
 
 \begin{table}[h]
@@ -314,20 +310,26 @@ the present year.
 	\centering\textbf{Year} & \textbf{Goals} \\ \hline
 	%First year
 	First  
-	& \tabitem First goal \\
-	& \tabitem Second goal\\
-	
+	& \tabitem Identifying a set of existing \texttt{AREPO} simulations suitable 
+	for our succeeding \\
+	& \ \ \ \ studies. \\
+	& \tabitem Applying web finding schemes (T-web and V-web) to the simulations 
+	for\\
+	& \ \ \ \ quantifying structures in the gaseous cosmic web, i.e. voids, walls, 
+	filaments\\
+	& \ \ \ \ and clusters.\\
+	& \tabitem Evaluating properties of found structures at different redshifts.\\
 	\\
 	%Second year	
 	Second
-	& \tabitem First goal \\
-	& \tabitem Second goal\\
-
+	& \tabitem Studying by mean of high resolution simulations the impact of the 
+	gaseous\\
+	& \ \ \ \ cosmic web specific galaxy evolution processes.\\
 	\\	
 	%Third year	
 	Third
-	& \tabitem First goal \\
-	& \tabitem Second goal\\ 
+	& \tabitem Comparing with available observational data of the cosmic web.\\
+	& \tabitem Deriving new observable from our theoretical studies.\\ 
 	
 	\hline\hline
   \end{tabular}  
@@ -339,6 +341,7 @@ the present year.
 %==============================================================================
 \bibliographystyle{latex/mn2e}
 \renewcommand{\bibname}{8\ \ \ \ Bibliography}
+\small
 \bibliography{references.bib}
 %==============================================================================
 
