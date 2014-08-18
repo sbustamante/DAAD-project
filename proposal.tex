@@ -167,14 +167,37 @@ implemented in the \texttt{AREPO} code. It combines the strengths of
 \texttt{AMR} and \texttt{SPH} but overcoming their weaknesses. This code uses 
 a moving mesh based on a Voronoi tessellation defined over a set of particles
 that represents the fluid. The geometry of the mesh resembles very closely that 
-of the point distribution, avoiding a distorted spatial resolution and retaining 
-the auto-adaptivity inherent of \texttt{SPH}. Unlike \texttt{AMR}, the 
-hydro-solver of \texttt{AREPO} is based on a Gudonov's scheme that guarantees the
-Galilean invariance and the conservative nature of the solutions. All of these 
-features makes \texttt{AREPO} highly efficient and accurate for simulating a 
-plethora of hydrodynamical problems, even including those where \texttt{AMR} and
-\texttt{SPH} fail separately. Hence \texttt{AREPO} is a very attractive approach 
-for computing fully hydrodynamical simulations of the large-scale Universe.
+of the point distribution, avoiding a distorted spatial resolution and 
+retaining the auto-adaptivity inherent of \texttt{SPH}. Unlike \texttt{AMR}, 
+the hydro-solver of \texttt{AREPO} is based on a Gudonov's scheme with an exact 
+Riemman solver that guarantees the Galilean invariance and the conservative 
+nature of the solutions. All of these features makes \texttt{AREPO} highly 
+efficient and accurate for simulating a plethora of hydrodynamical problems, 
+even including those where \texttt{AMR} and \texttt{SPH} fail separately. Hence 
+\texttt{AREPO} is a very attractive approach for computing fully hydrodynamical 
+simulations of the large-scale Universe.
+
+\
+
+Using a hydrodynamical simulation (\footnotesize{\texttt{HORIZON-AGN}}
+\normalsize) computed through the \texttt{RAMSES} code, \citet{Dubois14} 
+studied the alignment between the spin of galaxies and filaments above redshift
+one. They found a redshift-dependent stellar mass threshold above which 
+high-mass galaxies are misaligned with filaments, while low-mass galaxies are 
+aligned. On the other hand, \citet{Hahn10} also studied this problem by mean of 
+a \texttt{RAMSES} simulation, but finding a completely different result, 
+high-mass galaxies are aligned while low-mass galaxies are misaligned with 
+their embedding filaments. Related to highly efficient star forming galaxies at 
+high-redfhits, \citet{Dekel09} proposed a new scenario where the filamentary 
+accretion of cold gas streams enhances the star formation rate. This is a very 
+interesting alternative to the merger scenario, where star forming rates are 
+propelled by violent collisions of galaxies. The new picture is consistent
+with the observed properties of those galaxies, where there can be found 
+relatively intact rotating disks. All this shows the current interest in 
+studying the impact of the gaseous cosmic web on galaxy evolution in the light 
+of \texttt{AREPO} simulations, where it is necessary to conciliate and study 
+deeper existing results and predict new ones.
+
 
 
 
