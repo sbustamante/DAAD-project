@@ -64,21 +64,19 @@ More detailed information of the applicant can be found here \url{http://goo.gl/
 %==============================================================================
 
 
-The cosmic web is one the most striking features of the Universe, being 
-predicted by theory, widely tested by observations and studied through 
-simulations. Currently, dark matter-only simulations are one of the best tools 
-we have for understanding the cosmic web. Nevertheless, recent works about 
-filamentary gas accretion, acquisition of angular momentum of galaxies and spin 
-orientation have proven the need of using full hydrodynamic simulations. 
-Incorporating gas dynamics into simulations is far from an easy task, and 
-traditionally used hydro-solvers present important accuracy problems. Recently, 
-a completely new paradigm was implemented in the \texttt{AREPO} code, which 
-combines the strength of previous schemes and overcomes their weaknesses, making
-it a very attractive choice for simulating the large-scale Universe. Despite 
-this, no much work has been done in studying the gaseous cosmic web and its 
-impact on galaxy evolution using \texttt{AREPO} simulations, so that is the 
-main aim of this PhD project.
-
+The cosmic web is one the most striking features of the Universe. It
+has been widely tested by observations and studies through theory and
+simulations. This web pattern has been studied in detail for the dark
+matter distribution. Nevertheless, recent numerical work on
+filamentary gas accretion demonstrated the need of hydrodynamical
+simulations to understand galaxy evolution in the cosmic web. 
+However, modelling gas dynamics is a complex task. Common hydro
+solvers present accuracy problems that can bias the results of a
+cosmic web study. However, recently a completely new paradigm
+was implemented in the \texttt{AREPO} code, which combines the
+strength of previous schemes and overcomes their weaknesses. The main
+aim of this PhD project is to perform unprecedented analysis of the
+gaseous cosmic web using this new generation scheme. 
 
 
 \newpage
@@ -89,125 +87,123 @@ main aim of this PhD project.
 
 The filamentary nature of the large-scale matter distribution (the so-called 
 cosmic web) is one of the most striking features of Universe \citep{Bond96}, 
-being an essential part of the current standard paradigm in cosmology. Last 
-generation galaxy redshift surveys, e.g. the \textit{two-degree-Field Galaxy 
-Redshift Survey} (2dFGRS, see \citet{Colless03}) and the \textit{Sloan Digital 
-Sky Survey} (SDSS, see \citet{Abazajian09}), have revealed the cosmic web at a 
-level of detail never seen before. In addition, other observational probes like
-the Ly-$\alpha$ forest in distant quasars \citep{Rauch98, Cantalupo14}, 
-fluorescence emissions \citep{Cantalupo12} and weak gravitational lensing 
-\citep{Massey07, Dietrich12} have also validated this picture undoubtedly.
+Last generation galaxy redshift surveys, such as the
+\textit{two-degree-Field Galaxy  Redshift Survey} (2dFGRS, see
+\citet{Colless03}) and the \textit{Sloan Digital  Sky Survey} (SDSS,
+see \citet{Abazajian09}), have revealed the cosmic web with a great
+level of detail. In addition, other observational probes like
+the Ly-$\alpha$ forest in distant quasars \citep{Rauch98,
+  Cantalupo14} and weak gravitational lensing 
+\citep{Massey07, Dietrich12} have also validated this picture.
 
 \
 
-On the theoretical side, early descriptions of the evolution of the large-scale
-Universe, based on gravitational instabilities in primordial stages and leaded 
-by the seminal work of \citet{Zeldovich70}, predict the cosmic web picture. 
-Since then, our understanding of the structure and dynamics of the cosmic web 
-has been dramatically improved as new and more powerful theoretical and 
-computational tools and better observational data become available. In 
-particular, N-body simulations, fuelled by last generation computing systems 
-and ever more efficient numerical algorithms, have an increasingly important 
-role in revealing the complexity of the large-scale Universe.
+On the theoretical side, Ya. B. Zeldovich \citep{Zeldovich70} provided
+the founding insights into the physical mechanism driving the cosmic
+web formation. Since then, our understanding of the structure and
+dynamics of the cosmic web  has improved dramatically thanks to
+powerful computational tools that became avialable. In  particular,
+N-body simulations,  have had an key role in understanding the origin
+and evolution of the Universe on its larges scales.
 
 \
 
-In the current cosmological paradigm, the $\Lambda$CDM model, there are two 
-different types of matter, i.e. baryonic or luminous matter, corresponding 
-to what we can see, and the poorly interacting (and of a still unknown nature) 
-dark matter. The most actual measurements of their abundances indicate a 
-proportion approximately of 1 to 6, respectively \citep{Planck13XVI}. 
-Accordingly, most of the related numerical research has been made based on 
-dark matter-only N-body simulations, where the gas dynamics has been 
-neglected (for a very detailed numerical analysis of the dark matter cosmic 
-web, see \citet{Cautun14}). Nevertheless, recent simulation studies in 
-filamentary gas accretion in high redsfhit galaxies \citep{Dekel09}, 
-large-scale orientation and alignment of the spin of galaxies with they 
-embedding cosmic web \citep{Hahn10}, and filamentary-induced exchange of 
-galaxy angular momentum \citep{Dubois14}, have proven the need of using 
-fully hydrodynamical cosmological simulations due to the high level of coupling
-between dark and baryonic matter.
+To get predictive power from this paradigm it is required to have a
+handle on the matter components of the Universe. In the current
+cosmological paradigm there are two different types of matter. The
+baryonic or luminous matter and the non-relativistic 
+(i.e. cold) dark matter (DM). In our Universe the DM is predominant as
+many different cosmological probes indicate \citep{Planck13XVI}. 
 
 \
 
-Incorporating gas dynamics into cosmological simulations is far from an easy 
-task. The first reason is the highly complex \textit{gastrophysical} processes 
-involved in baryonic dynamics, i.e. shock heating, photoionization, supernova 
-feedback, stellar wind, radiative cooling, star formation \citep{Bond93}. The
-second reason is the complexity of the hydrodynamical equations followed by 
-the gas. Traditionally, two different hydro-solvers have been used for this 
-task, i.e. a Lagrangian \textit{Smoothed Particle Hydrodynamics} (\texttt{SPH}) 
-technique \citep{Monaghan92} (for an implementation, see e.g. the \texttt{GADGET} 
-code by \citet{Springel05}) and an Eulerian solver on a mesh with \textit{
-Adaptive Mesh Refinement} (\texttt{AMR}) \citep{Berger89} (for an implementation, 
-see e.g. the \texttt{RAMSES} code by \citet{Teyssier02}). 
+Accordingly, numerical research focuses on simulating dark matter
+dominated universes, providing us with a detailed
+understanding of the Universe on its largest scales. However, on small
+(galactic) scales the efects of baryons are dominant. For instance,
+recent simulations show that filamentary gas accretion in early stages
+of galaxy evolution is a key physical process \citep{Dekel09}; there
+is evidence that it plays a central role in the construction of discs
+\citep{Dubois14}, determining the alignment of galaxies with respect
+to the web \citep{Hahn10} and fueling high star formation rates
+\citep{Dekel09}.  
+
+\
+
+Modelling baryons by incorporating gas dynamics into cosmological
+simulations is a complex task. The main reason is that gas is
+affected by a great variety of physical processes absent in dark
+matter dynamics, mainly shocks and radiative cooling
+\citep{Bond93}. Besides, there is the inherent numerical complexity in
+solving numerically the relevant equations. Traditionally, two
+different hydro-solvers have been used by the astrophysical community
+for this task. The first is a Lagrangian scheme on moving point masses
+named \textit{Smoothed
+  Particle Hydrodynamics} (\texttt{SPH}) \citep{Monaghan92} (for an
+implementation, see e.g. the \texttt{GADGET} code by
+\citet{Springel05}); the second is an Eulerian solver on a fixed mesh
+known as \textit{ Adaptive Mesh Refinement} (\texttt{AMR})
+\citep{Berger89} (for an implementation,  see e.g. the \texttt{RAMSES}
+code by \citet{Teyssier02}).  
 
 \
 
 The \texttt{SPH} scheme is easily implemented on a computer due to its 
-Lagrangian character. Furthermore, as the mesh follows the evolution of each 
-single particle and has a continuously auto-adjusting resolution, its usage is 
-very suitable for problems like turbulent flows. However, its same Lagrangian 
-nature originates an inhomogeneous and distorted spatial resolution, what makes 
-difficult to account for low density regions in simulations and causes 
-suppressions in fluid instabilities, making it poor suitable for capturing shock
-dynamics. An artificial viscosity term is usually introduced for improving the 
-accuracy in these situations. On the other hand, \texttt{AMR} is more efficient 
+Lagrangian character. Furthermore, as the physical systems evolves the
+mass particles naturally move into higher density regions providing an
+self-adjusting spatial resolution. However, this scheme has ben shown
+to produce spurios supression of some fluid instabilities making it
+unsuitable to model shock dynamics. 
+On the other hand, \texttt{AMR} is more efficient 
 for capturing shock dynamics. However, due to the conservative nature of the 
-hydrodynamical equations, a fixed mesh causes a lack of Galilean invariance, 
-making the computer implementation considerable harder. Moreover, the 
-unsmooth sampling of physical properties introduces spurious vorticity to the 
-fluid, making the scheme unsuitable for studying turbulent flows (for a further
-discussion and comparison of both schemes, see \citet{Plewa01}).
+hydrodynamical equations, the fixed mesh causes a lack of Galilean
+invariance. Furthermore, the sampling of physical properties over the
+grid introduces spurious vorticity to the fluid, making the scheme
+unsuitable for studying turbulent flows. For a detailed  discussion
+and comparison of \texttt{SPH} and \texttt{AMR} see \citet{Plewa01}).
 
 \
 
-Recently, a completely new paradigm was introduced by \citet{Springel10} and 
-implemented in the \texttt{AREPO} code. It combines the strengths of 
-\texttt{AMR} and \texttt{SPH} but overcoming their weaknesses. This code uses 
-a moving mesh based on a Voronoi tessellation, that is defined over a set of 
-particles that represents the fluid. The geometry of the mesh resembles very 
-closely that of the point distribution, avoiding a distorted spatial resolution 
-and retaining the auto-adaptivity inherent of \texttt{SPH}. Unlike \texttt{AMR}, 
-the hydro-solver of \texttt{AREPO} is based on a Gudonov's scheme with an exact 
-Riemman solver that guarantees the Galilean invariance and the conservative 
-nature of the solutions. All of these features makes \texttt{AREPO} highly 
-accurate for simulating a plethora of hydrodynamical problems, even including 
-those where \texttt{AMR} and \texttt{SPH} fail separately. Hence \texttt{AREPO} 
-is a very attractive approach for computing fully hydrodynamical simulations of 
-the large-scale Universe.
+Recently, a completely new paradigm to solve hydrodynamical was introduced by
+\citet{Springel10} and  implemented into the \texttt{AREPO} code. It
+combines the strengths of  \texttt{AMR} and \texttt{SPH} but
+overcoming their weaknesses. \texttt{AREPO} uses a moving mesh based
+on a Voronoi tessellation defined over a set of particles that represents the fluid. The geometry of the mesh resembles very closely that 
+of the point distribution retaining the auto-adaptivity inherent of
+\texttt{SPH} and also keeping a grid to capture shocks like
+\texttt{AMR} does. These features make \texttt{AREPO} highly 
+efficient and accurate for simulating a wide range of hydrodynamical
+problems, making it the best avaialable approach for computing the
+effects of the gaseus cosmic web in the Universe.
 
 \
+%here
 
-Once introduced the \texttt{AREPO} code, next it is mentioned some previous 
-relevant studies based on traditional hydro-solvers. 
-
-Through a hydrodynamical 
-simulation (\begin{footnotesize}\texttt{HORIZON-AGN}\end{footnotesize}), 
-computed using the \texttt{RAMSES} code, \citet{Dubois14} studied the alignment
-between the spin of galaxies and gaseous filaments above redshift one. They 
-found a redshift-dependent stellar mass threshold above which high-mass 
-galaxies are misaligned with filaments, while low-mass galaxies are aligned. On 
-the other hand, \citet{Hahn10} also studied this problem by mean of a 
-\texttt{RAMSES} simulation. They found a completely different result, high-mass 
-galaxies are aligned while low-mass galaxies are misaligned with their embedding 
-filaments. Another important problem related to highly efficient star forming 
-galaxies at high-redshifts was studied by \citet{Dekel09} through the 
-\begin{footnotesize}\texttt{MareNostrum}\end{footnotesize} simulation. It was 
-computed using the \texttt{GADGET-II} code. They proposed a new scenario where 
-the filamentary accretion of cold gas streams enhances the star formation rate. 
-This is a interesting alternative to the merger scenario, where star forming 
-rates are fuelled by violent collisions of galaxies. The new picture is 
-consistent with observed properties of those galaxies, where there can be found 
+Using a hydrodynamical simulation (\footnotesize{\texttt{HORIZON-AGN}}
+\normalsize) computed through the \texttt{RAMSES} code, \citet{Dubois14} 
+studied the alignment between the spin of galaxies and filaments above redshift
+one. They found a redshift-dependent stellar mass threshold above which 
+high-mass galaxies are misaligned with filaments, while low-mass galaxies are 
+aligned. On the other hand, \citet{Hahn10} also studied this problem by mean of 
+a \texttt{RAMSES} simulation, but finding a completely different result, 
+high-mass galaxies are aligned while low-mass galaxies are misaligned with 
+their embedding filaments. Related to highly efficient star forming galaxies at 
+high-redfhits, \citet{Dekel09} proposed a new scenario where the filamentary 
+accretion of cold gas streams enhances the star formation rate. This is a very 
+interesting alternative to the merger scenario, where star forming rates are 
+propelled by violent collisions of galaxies. The new picture is consistent
+with the observed properties of those galaxies, where there can be found 
 relatively intact rotating disks. All this shows the current interest in 
 studying the impact of the gaseous cosmic web on galaxy evolution in the light 
 of \texttt{AREPO} simulations, where it is necessary to conciliate and study 
 deeper existing results and predict new ones.
 
 
+
+
 %==============================================================================
 
-
+\newpage
 %==============================================================================
 \section{Objectives}
 %==============================================================================
@@ -262,7 +258,7 @@ In Heidelberg, the required computer facilities and access to existing
 simulations and the private \texttt{AREPO} code (of which Prof. Volker 
 Springel is the main author) is granted. Moreover, the renowned research 
 trajectory and expertise of Prof. Springel in numerical cosmology is 
-certainly another interest for pursuing this specific PhD project.
+certainly another appealing for pursuing this specific PhD project.
 
 
 \begin{itemize}
@@ -274,9 +270,9 @@ high redshifts will be computed.}
 
 
 Once analysed the gaseous cosmic web, we proceed to compute its impact on 
-galaxy evolution. This is done specially at high-redshifts where a big amount 
-of observational constrains are available. This step involves computing new 
-high resolution \texttt{AREPO} simulations in order to study specific processes
+galaxy evolution, specially at high-redshifts due to the big amount of 
+available observational constrains. This step involves computing new high 
+resolution \texttt{AREPO} simulations in order to study specific processes 
 like: star formation rate enhanced by filamentary gas accretion, angular 
 momentum exchange between galaxies and the cosmic web, spin orientation of 
 galaxies along filaments and walls.
@@ -351,7 +347,7 @@ the present year \footnote{\scriptsize Further information in
 	Second
 	& \tabitem Studying by mean of high resolution simulations the impact of the 
 	gaseous\\
-	& \ \ \ \ cosmic web on specific galaxy evolution processes.\\
+	& \ \ \ \ cosmic web specific galaxy evolution processes.\\
 	\\	
 	%Third year	
 	Third
@@ -366,7 +362,7 @@ the present year \footnote{\scriptsize Further information in
 
 
 %==============================================================================
-\bibliographystyle{latex/mn2e}
+\bibliographystyle{mn2e}
 \renewcommand{\bibname}{8\ \ \ \ Bibliography}
 \small
 \bibliography{references.bib}
