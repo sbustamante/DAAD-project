@@ -66,18 +66,18 @@ More detailed information of the applicant can be found here \url{http://goo.gl/
 
 The cosmic web is one the most striking features of the Universe, being 
 predicted by theory, widely tested by observations and studied through 
-simulations. Currently, dark matter-only simulations is one of the best tools 
+simulations. Currently, dark matter-only simulations are one of the best tools 
 we have for understanding the cosmic web. Nevertheless, recent works about 
 filamentary gas accretion, acquisition of angular momentum of galaxies and spin 
 orientation have proven the need of using full hydrodynamic simulations. 
-Incorporating gas dynamics in simulations is far from an easy task, and 
+Incorporating gas dynamics into simulations is far from an easy task, and 
 traditionally used hydro-solvers present important accuracy problems. Recently, 
 a completely new paradigm was implemented in the \texttt{AREPO} code, which 
 combines the strength of previous schemes and overcomes their weaknesses, making
 it a very attractive choice for simulating the large-scale Universe. Despite 
 this, no much work has been done in studying the gaseous cosmic web and its 
 impact on galaxy evolution using \texttt{AREPO} simulations, so that is the 
-main objective of this PhD project.
+main aim of this PhD project.
 
 
 
@@ -90,7 +90,7 @@ main objective of this PhD project.
 The filamentary nature of the large-scale matter distribution (the so-called 
 cosmic web) is one of the most striking features of Universe \citep{Bond96}, 
 being an essential part of the current standard paradigm in cosmology. Last 
-generation galaxy redshift surveys, such as the \textit{two-degree-Field Galaxy 
+generation galaxy redshift surveys, e.g. the \textit{two-degree-Field Galaxy 
 Redshift Survey} (2dFGRS, see \citet{Colless03}) and the \textit{Sloan Digital 
 Sky Survey} (SDSS, see \citet{Abazajian09}), have revealed the cosmic web at a 
 level of detail never seen before. In addition, other observational probes like
@@ -155,7 +155,7 @@ dynamics. An artificial viscosity term is usually introduced for improving the
 accuracy in these situations. On the other hand, \texttt{AMR} is more efficient 
 for capturing shock dynamics. However, due to the conservative nature of the 
 hydrodynamical equations, a fixed mesh causes a lack of Galilean invariance, 
-making the computer implementation considerable harder. Furthermore, the 
+making the computer implementation considerable harder. Moreover, the 
 unsmooth sampling of physical properties introduces spurious vorticity to the 
 fluid, making the scheme unsuitable for studying turbulent flows (for a further
 discussion and comparison of both schemes, see \citet{Plewa01}).
@@ -165,45 +165,49 @@ discussion and comparison of both schemes, see \citet{Plewa01}).
 Recently, a completely new paradigm was introduced by \citet{Springel10} and 
 implemented in the \texttt{AREPO} code. It combines the strengths of 
 \texttt{AMR} and \texttt{SPH} but overcoming their weaknesses. This code uses 
-a moving mesh based on a Voronoi tessellation defined over a set of particles
-that represents the fluid. The geometry of the mesh resembles very closely that 
-of the point distribution, avoiding a distorted spatial resolution and 
-retaining the auto-adaptivity inherent of \texttt{SPH}. Unlike \texttt{AMR}, 
+a moving mesh based on a Voronoi tessellation, that is defined over a set of 
+particles that represents the fluid. The geometry of the mesh resembles very 
+closely that of the point distribution, avoiding a distorted spatial resolution 
+and retaining the auto-adaptivity inherent of \texttt{SPH}. Unlike \texttt{AMR}, 
 the hydro-solver of \texttt{AREPO} is based on a Gudonov's scheme with an exact 
 Riemman solver that guarantees the Galilean invariance and the conservative 
 nature of the solutions. All of these features makes \texttt{AREPO} highly 
-efficient and accurate for simulating a plethora of hydrodynamical problems, 
-even including those where \texttt{AMR} and \texttt{SPH} fail separately. Hence 
-\texttt{AREPO} is a very attractive approach for computing fully hydrodynamical 
-simulations of the large-scale Universe.
+accurate for simulating a plethora of hydrodynamical problems, even including 
+those where \texttt{AMR} and \texttt{SPH} fail separately. Hence \texttt{AREPO} 
+is a very attractive approach for computing fully hydrodynamical simulations of 
+the large-scale Universe.
 
 \
 
-Using a hydrodynamical simulation (\footnotesize{\texttt{HORIZON-AGN}}
-\normalsize) computed through the \texttt{RAMSES} code, \citet{Dubois14} 
-studied the alignment between the spin of galaxies and filaments above redshift
-one. They found a redshift-dependent stellar mass threshold above which 
-high-mass galaxies are misaligned with filaments, while low-mass galaxies are 
-aligned. On the other hand, \citet{Hahn10} also studied this problem by mean of 
-a \texttt{RAMSES} simulation, but finding a completely different result, 
-high-mass galaxies are aligned while low-mass galaxies are misaligned with 
-their embedding filaments. Related to highly efficient star forming galaxies at 
-high-redfhits, \citet{Dekel09} proposed a new scenario where the filamentary 
-accretion of cold gas streams enhances the star formation rate. This is a very 
-interesting alternative to the merger scenario, where star forming rates are 
-propelled by violent collisions of galaxies. The new picture is consistent
-with the observed properties of those galaxies, where there can be found 
+Once introduced the \texttt{AREPO} code, next it is mentioned some previous 
+relevant studies based on traditional hydro-solvers. 
+
+Through a hydrodynamical 
+simulation (\begin{footnotesize}\texttt{HORIZON-AGN}\end{footnotesize}), 
+computed using the \texttt{RAMSES} code, \citet{Dubois14} studied the alignment 
+between the spin of galaxies and filaments above redshift one. They found a 
+redshift-dependent stellar mass threshold above which high-mass galaxies are 
+misaligned with filaments, while low-mass galaxies are aligned. On the other 
+hand, \citet{Hahn10} also studied this problem by mean of a \texttt{RAMSES} 
+simulation. They found a completely different result, high-mass galaxies are 
+aligned while low-mass galaxies are misaligned with their embedding filaments. 
+Another important problem related to highly efficient star forming galaxies at 
+high-redshifts was studied by \citet{Dekel09} through the 
+\begin{footnotesize}\texttt{MareNostrum}\end{footnotesize} simulation. It was 
+computed using the \texttt{GADGET-II} code. They proposed a new scenario where 
+the filamentary accretion of cold gas streams enhances the star formation rate. 
+This is a interesting alternative to the merger scenario, where star forming 
+rates are fuelled by violent collisions of galaxies. The new picture is 
+consistent with observed properties of those galaxies, where there can be found 
 relatively intact rotating disks. All this shows the current interest in 
 studying the impact of the gaseous cosmic web on galaxy evolution in the light 
 of \texttt{AREPO} simulations, where it is necessary to conciliate and study 
 deeper existing results and predict new ones.
 
 
-
-
 %==============================================================================
 
-\newpage
+
 %==============================================================================
 \section{Objectives}
 %==============================================================================
@@ -258,7 +262,7 @@ In Heidelberg, the required computer facilities and access to existing
 simulations and the private \texttt{AREPO} code (of which Prof. Volker 
 Springel is the main author) is granted. Moreover, the renowned research 
 trajectory and expertise of Prof. Springel in numerical cosmology is 
-certainly another appealing for pursuing this specific PhD project.
+certainly another interest for pursuing this specific PhD project.
 
 
 \begin{itemize}
@@ -270,9 +274,9 @@ high redshifts will be computed.}
 
 
 Once analysed the gaseous cosmic web, we proceed to compute its impact on 
-galaxy evolution, specially at high-redshifts due to the big amount of 
-available observational constrains. This step involves computing new high 
-resolution \texttt{AREPO} simulations in order to study specific processes 
+galaxy evolution. This is done specially at high-redshifts where a big amount 
+of observational constrains are available. This step involves computing new 
+high resolution \texttt{AREPO} simulations in order to study specific processes
 like: star formation rate enhanced by filamentary gas accretion, angular 
 momentum exchange between galaxies and the cosmic web, spin orientation of 
 galaxies along filaments and walls.
@@ -347,7 +351,7 @@ the present year \footnote{\scriptsize Further information in
 	Second
 	& \tabitem Studying by mean of high resolution simulations the impact of the 
 	gaseous\\
-	& \ \ \ \ cosmic web specific galaxy evolution processes.\\
+	& \ \ \ \ cosmic web on specific galaxy evolution processes.\\
 	\\	
 	%Third year	
 	Third
