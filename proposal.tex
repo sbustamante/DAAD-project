@@ -92,9 +92,9 @@ Last generation galaxy redshift surveys, such as the
 \citet{Colless03}) and the \textit{Sloan Digital  Sky Survey} (SDSS,
 see \citet{Abazajian09}), have revealed the cosmic web with a great
 level of detail. In addition, other observational probes like
-the Ly-$\alpha$ forest in distant quasars \citep{Rauch98,
-  Cantalupo14} and weak gravitational lensing 
-\citep{Massey07, Dietrich12} have also validated this picture.
+the Ly-$\alpha$ forest in distant quasars \citep{Rauch98, Cantalupo14} and 
+weak gravitational lensing \citep{Massey07, Dietrich12} have also validated 
+this picture.
 
 \
 
@@ -103,8 +103,8 @@ the founding insights into the physical mechanism driving the cosmic
 web formation. Since then, our understanding of the structure and
 dynamics of the cosmic web  has improved dramatically thanks to
 powerful computational tools that became avialable. In  particular,
-N-body simulations,  have had an key role in understanding the origin
-and evolution of the Universe on its larges scales.
+N-body simulations, have had an key role in understanding the origin
+and evolution of the Universe on its largest scales.
 
 \
 
@@ -134,28 +134,27 @@ Modelling baryons by incorporating gas dynamics into cosmological
 simulations is a complex task. The main reason is that gas is
 affected by a great variety of physical processes absent in dark
 matter dynamics, mainly shocks and radiative cooling
-\citep{Bond93}. Besides, there is the inherent numerical complexity in
+\citep{Bond93}. Besides, there is the inherent complexity in
 solving numerically the relevant equations. Traditionally, two
 different hydro-solvers have been used by the astrophysical community
 for this task. The first is a Lagrangian scheme on moving point masses
-named \textit{Smoothed
-  Particle Hydrodynamics} (\texttt{SPH}) \citep{Monaghan92} (for an
-implementation, see e.g. the \texttt{GADGET} code by
-\citet{Springel05}); the second is an Eulerian solver on a fixed mesh
-known as \textit{ Adaptive Mesh Refinement} (\texttt{AMR})
+named \textit{Smoothed Particle Hydrodynamics} (\texttt{SPH}) 
+\citep{Monaghan92} (for an implementation, see e.g. the \texttt{GADGET} 
+code by \citet{Springel05}); the second is an Eulerian solver on a fixed 
+mesh known as \textit{ Adaptive Mesh Refinement} (\texttt{AMR})
 \citep{Berger89} (for an implementation,  see e.g. the \texttt{RAMSES}
 code by \citet{Teyssier02}).  
 
 \
 
 The \texttt{SPH} scheme is easily implemented on a computer due to its 
-Lagrangian character. Furthermore, as the physical systems evolves the
+Lagrangian character. Furthermore, as the physical systems evolves, the
 mass particles naturally move into higher density regions providing an
-self-adjusting spatial resolution. However, this scheme has ben shown
+self-adjusting spatial resolution. However, this scheme has been shown
 to produce spurios supression of some fluid instabilities making it
 unsuitable to model shock dynamics. 
 On the other hand, \texttt{AMR} is more efficient 
-for capturing shock dynamics. However, due to the conservative nature of the 
+for capturing shock dynamics. However, due to the conservative nature of the
 hydrodynamical equations, the fixed mesh causes a lack of Galilean
 invariance. Furthermore, the sampling of physical properties over the
 grid introduces spurious vorticity to the fluid, making the scheme
@@ -164,17 +163,18 @@ and comparison of \texttt{SPH} and \texttt{AMR} see \citet{Plewa01}).
 
 \
 
-Recently, a completely new paradigm to solve hydrodynamical was introduced by
-\citet{Springel10} and  implemented into the \texttt{AREPO} code. It
-combines the strengths of  \texttt{AMR} and \texttt{SPH} but
+Recently, a completely new paradigm to solve hydrodynamical problems was 
+introduced by \citet{Springel10} and  implemented into the \texttt{AREPO}
+code. It combines the strengths of  \texttt{AMR} and \texttt{SPH} but
 overcoming their weaknesses. \texttt{AREPO} uses a moving mesh based
-on a Voronoi tessellation defined over a set of particles that represents the fluid. The geometry of the mesh resembles very closely that 
+on a Voronoi tessellation defined over a set of particles that represents 
+the fluid. The geometry of the mesh resembles very closely that 
 of the point distribution retaining the auto-adaptivity inherent of
 \texttt{SPH} and also keeping a grid to capture shocks like
 \texttt{AMR} does. These features make \texttt{AREPO} highly 
 efficient and accurate for simulating a wide range of hydrodynamical
-problems, making it the best avaialable approach for computing the
-effects of the gaseus cosmic web in the Universe.
+problems, making it the best available approach for computing the
+effects of the gaseous cosmic web in the Universe.
 
 \
 %here
@@ -258,7 +258,7 @@ In Heidelberg, the required computer facilities and access to existing
 simulations and the private \texttt{AREPO} code (of which Prof. Volker 
 Springel is the main author) is granted. Moreover, the renowned research 
 trajectory and expertise of Prof. Springel in numerical cosmology is 
-certainly another appealing for pursuing this specific PhD project.
+certainly another interest for pursuing this specific PhD project.
 
 
 \begin{itemize}
@@ -347,7 +347,7 @@ the present year \footnote{\scriptsize Further information in
 	Second
 	& \tabitem Studying by mean of high resolution simulations the impact of the 
 	gaseous\\
-	& \ \ \ \ cosmic web specific galaxy evolution processes.\\
+	& \ \ \ \ cosmic web on specific galaxy evolution processes.\\
 	\\	
 	%Third year	
 	Third
@@ -362,7 +362,7 @@ the present year \footnote{\scriptsize Further information in
 
 
 %==============================================================================
-\bibliographystyle{mn2e}
+\bibliographystyle{latex/mn2e}
 \renewcommand{\bibname}{8\ \ \ \ Bibliography}
 \small
 \bibliography{references.bib}
