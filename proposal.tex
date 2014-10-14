@@ -152,7 +152,7 @@ The \texttt{SPH} scheme is easily implemented on a computer due to its
 Lagrangian character. Furthermore, as the physical systems evolves, the
 mass particles naturally move into higher density regions providing a
 self-adjusting spatial resolution. However, this scheme has been shown
-to produce spurios supression of fluid instabilities making it
+to produce spurious suppression of fluid instabilities making it
 unsuitable to model some of the dynamics accurately. 
 On the other hand, \texttt{AMR} is more efficient 
 for capturing shock dynamics. However, due to the conservative nature of the
@@ -188,12 +188,14 @@ high-mass galaxies are misaligned with filaments, while low-mass galaxies are
 aligned. On the other hand, \citet{Hahn10} also studied this problem by mean of 
 a \texttt{RAMSES} simulation, but finding a completely different result, 
 high-mass galaxies are aligned while low-mass galaxies are misaligned with 
-their embedding filaments. Related to highly efficient star forming galaxies at 
-high-redshifts, \citet{Dekel09} proposed a new scenario where the filamentary 
-accretion of cold gas streams enhances the star formation rate. This is a very 
-interesting alternative to the merger scenario, where star forming rates are 
-propelled by violent collisions of galaxies. The new picture appears consistent
-with the observed properties of those galaxies, which exhibit
+their embedding filaments. Some of these results may be affected by grid-alignment
+effects of the disk, which occur in \texttt{AMR} codes such as \texttt{RAMSES}
+but are absent in the moving-mesh code \texttt{AREPO}. Related to highly efficient 
+star forming galaxies at high-redshifts, \citet{Dekel09} proposed a new scenario 
+where the filamentary accretion of cold gas streams enhances the star formation 
+rate. This is a very interesting alternative to the merger scenario, where star 
+forming rates are propelled by violent collisions of galaxies. The new picture 
+appears consistent with the observed properties of those galaxies, which exhibit
 relatively intact rotating disks. All this shows the current interest in 
 studying the impact of the gaseous cosmic web on galaxy evolution in the light 
 of \texttt{AREPO} simulations, which make to possible to study 
