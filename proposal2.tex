@@ -12,10 +12,9 @@
 \begin{document}
 \maketitle
 \begin{center}
-\includegraphics[trim = 0mm 3.5cm 0mm 3.0cm, clip, keepaspectratio=true,
+\includegraphics[trim = 0mm 2.0cm 0mm 2.0cm, clip, keepaspectratio=true,
 width=0.7\textheight]{Presentation1.png}
-\tiny{A projection of the cosmic web in the ILLUSTRIS simulation, that was made
-with AREPO (http://www.illustris-project.org/)}
+\tiny{Artist representation binary black holes https://astronomynow.com/2015/09/22/pairs-of-supermassive-black-holes-in-galaxies-may-be-rarer-than-previously-thought/}
 \end{center}
 \tableofcontents
  
@@ -82,7 +81,7 @@ on realistic timescales.
 \section{Motivation}
 %==============================================================================
 
-\subsection{First phase}
+\subsection*{First phase}
 
 Supermassive black holes are ubiquitously observed in the centers of galaxies, 
 and they play a critical role in current theories for galaxy formation, where 
@@ -104,20 +103,21 @@ may be weak/interrupted after a merger (because the center is not yet found agai
 and how many free floating massive black holes there may be, the orbit of the 
 black holes needs to be followed reasonably accurately.
 
-\subsection{Second phase}
+\subsection*{Second phase}
 
-Whenever supermassive black holes merge during galaxy mergers, they emit
-a burst of gravitational wave radiation. This happens in an symmetric way such that there
-is a quite large recoil, kicking the BH out of the centre. It could even happen that the BH
-leaves the remnant halo entirely, but usually, it probably returns after some time. During
-this period, the galaxy may then grow unimpeded by the BH. We would like to find out
-how strongly predictions by galaxy formation are modified when the BH recoil kicks are
-accounted for. To this end, one can apply fitting functions produced by numerical relativity
-simulations to kick BH merger remnants depending on their mass ratio, whenever this
-happens in a cosmological simulation (see for example Sijacki et al., MNRAS, 2011, 414,
-3656, arxiv:1008.3313). Combined with a treatment of BH friction, the BHs are then
-expected to return to the centers after a finite time, so that these effects can be studied in
-modern simulations of galaxy formation.
+Whenever supermassive black holes merge during galaxy mergers, they emit a burst 
+of gravitational wave radiation. This happens in an symmetric way such that there
+is a quite large recoil, kicking the BH out of the centre. It could even happen 
+that the BH leaves the remnant halo entirely, but usually, it probably returns 
+after some time. During this period, the galaxy may then grow unimpeded by the BH. 
+We would like to find out how strongly predictions by galaxy formation are 
+modified when the BH recoil kicks are accounted for. To this end, one can apply 
+fitting functions produced by numerical relativity simulations to kick BH merger 
+remnants depending on their mass ratio, whenever this happens in a cosmological 
+simulation (see for example Sijacki et al., MNRAS, 2011, 414, 3656, arxiv:1008.3313). 
+Combined with a treatment of BH friction, the BHs are then expected to return to 
+the centers after a finite time, so that these effects can be studied in modern 
+simulations of galaxy formation.
 
 
 %==============================================================================
@@ -178,134 +178,108 @@ motion for the black hole particle by an explicit dynamical friction force.
 This can be done in different ways.
 
 \begin{itemize} 
-\item One can try to add a suitably modified version of Chandrasekhar’s dynamical friction
-formula, similar to how this is attempted in Tremmel et al. (2015, MNRAS, 451, 1868,
-arxiv:1501.07609). This involves some assumptions and technical approximations. In the
-formulation of Tremmel, they arranged it such that the force becomes ever weaker in the
-limit of infinite resolution, so that one argue it is a correction for the finite resolution of real-
-work simulations. However, the tests presented in the paper are not fully convincing and it
-is still unclear (certainly to me), whether this method works sufficiently well in practice
-(e.g. for galaxy merger simulations, and for cosmological simulations of galaxy formation).
-(2) Because it not really clear whether Chandrasekhar’s formula applies well when the BH
-is already close to the centre of the galaxy (where stars need to be ejected from the “loss-
-cone” and interactions with gas play a very important role), one may instead also
-conjecture different models. For example, if we assume that the BH is brought back
-efficiently to the potential minimum if it is displaced from the centre, we can construct an
-“optimum” friction force as follows: At the centre, the gradient of the potential is zero by
-definition, so that it can be approximated as quadratic to first order. The BH is hence
-expected to carry out harmonic oscillations around the centre. We can now try to define
-an optimum damping force that eliminates the oscillation on the shortest possible
-timescale (if the friction is too large, the motion will be “overdamped”, and one takes
-longer to the centre than for a suitably smaller force). We can estimate the potential
-around the centre as g(x) ~ phi_0 + 1/2 * (d^2phi/dx^2) * x^2, and the second derivative
-along one direction can be estimated from Poisson’s equation as (d^2phi/dx^2) ~ (1/3) (4
-Pi G rho), where rho is the local total mass density. The harmonic oscillator’s equation of
-motion will be x’’ = - om^2 * x = - dg/dx * x, meaning that the oscillation frequency is om
-= sqrt[(1/3) (4 Pi G rho)]. For a critical damping we would then need to add a friction force
-as x’’ = -om^2* x - k * x’, where k = 2 * om. In this case, we expect the orbit to decay on
-the local free fall timescale.
-Work steps:
+\item One can try to add a suitably modified version of Chandrasekhar's dynamical 
+friction formula, similar to how this is attempted in Tremmel et al. (2015, MNRAS, 
+451, 1868, arxiv:1501.07609). This involves some assumptions and technical 
+approximations. In the formulation of Tremmel, they arranged it such that the 
+force becomes ever weaker in the limit of infinite resolution, so that one argue 
+it is a correction for the finite resolution of real-work simulations. However, 
+the tests presented in the paper are not fully convincing and it is still unclear 
+whether this method works sufficiently well in practice (e.g. for galaxy merger 
+simulations, and for cosmological simulations of galaxy formation).
+
+\item Because it is not really clear whether Chandrasekhar's formula applies 
+well when the BH is already close to the centre of the galaxy (where stars need 
+to be ejected from the 'loss-cone' and interactions with gas play a very important 
+role), one may instead also conjecture different models. For example, if we assume 
+that the BH is brought back efficiently to the potential minimum if it is displaced 
+from the centre, we can construct an 'optimum' friction force as follows: At the 
+centre, the gradient of the potential is zero by definition, so that it can be 
+approximated as quadratic to first order. The BH is hence expected to carry out 
+harmonic oscillations around the centre. We can now try to define an optimum damping 
+force that eliminates the oscillation on the shortest possible timescale (if the 
+friction is too large, the motion will be 'overdamped', and one takes longer to the 
+centre than for a suitably smaller force). We can estimate the potential around the 
+centre as $g(x) \sim \phi_0 + (1/2) (d^2\phi/dx^2) x^2$, and the second derivative
+along one direction can be estimated from Poisson's equation as $(d^2\phi/dx^2) 
+\sim (1/3) (4 \pi G \rho)$, where $\rho$ is the local total mass density. The 
+harmonic oscillator's equation of motion will be $x'' = - \omega^2 x = - (dg/dx) x$, 
+meaning that the oscillation frequency is $\omega = \sqrt{(4 \pi G \rho)/3}$. 
+For a critical damping we would then need to add a friction force as $x'' = 
+-\omega^2 x - k x'$, where $k = 2 \omega$. In this case, we expect the orbit to 
+decay on the local free fall timescale.
 
 
 \end{itemize}
 
 
 %==============================================================================
-\section{Methodology}
+\section{Work Steps}
 %==============================================================================
 
+\subsection*{First phase}
 
-The proposed project is subject to a PhD study and will cover the following 
-aspects:
+The second idea presented in the methodology section is already implemented in 
+the AREPO code in a first version, through the switch BH\_FRICTION. This 
+implementation tries to determine a reference velocity of the potential minimum 
+by measuring its position in the environment of the BH, and then taking finite 
+differences to estimate this velocity (this is needed because for applying the 
+friction force antiparallel to the velocity one needs to know the local reference 
+frame). The oscillation frequency is estimated from the total matter density, 
+and from this a friction force is estimated antiparallel to the velocity against 
+the local frame of rest, with a tunable coefficient in front of order unity.
 
+\begin{itemize} 
+ 
+\item  As a first step, the implemented equations need to verified. This also requires that I
+explain you the many (in part quite complicated) technical aspects of the code that play a
+role here
+\item  We should then test the effects this implementation has, and how well it is working, in a
+number of situations:
 
 \begin{itemize}
 
-\item[\checkmark] \textit{First, an analysis and characterization of existing 
-hydrodynamical simulations based on the \texttt{AREPO} code will be done.}
+
+\item Simulations of Milky Way sized galaxies. Here, an important diagnostic would be to
+develop a plot script that shows the distance of BHs relative to the potential minima of
+the
+corresponding halos. This can be done based on the group catalogues, I think. First, one
+could look at the current state of affairs in some of the finished production simulations of
+Rob and Ruediger. Next, one should repeat one or two of these runs by disabling the BH
+centering that had been used (to see how bad the displacements get if one doesn’t try to
+correct them). Finally, one should try one or several variants of the friction treatments
+above, starting with method (2) and later also with method (1).
+
+\item Toy simulations of an isolated halo where one injects a BH with some velocity and
+impact parameter to study the decay of the orbit. Again, one should compare different
+friction treatments (ideally also at different resolution) with the results where no such thing
+is applied.
+
+\item Finally, one repeats the test of (a) for a cosmological simulation, where one can
+compile statistical results, e.g. about the distribution function of the average distances of
+BHs to their halo centers.
 
 \end{itemize}
 
-
-As this project will be entirely based on numerical results, an analysis and 
-characterization of existing \texttt{AREPO} hydrodynamical simulations is one 
-of the key steps. This includes a quantification of the dark matter and the 
-gaseous cosmic web through two different web finding schemes (i.e. the T-web 
-based on the tidal tensor \citep{Hahn07,Forero09}, and the V-web based on the 
-velocity shear tensor \citep{Hoffman12}, schemes in which prof. Jaime 
-Forero-Romero has a broad research experience); thus voids, walls, filaments 
-and clusters will be identified. Then, a statistical analysis of the found 
-structures will be carried out, i.e. volume and mass filling fractions at 
-different redshifts, morphology, halo populations and filamentary accretion of 
-gas.
-
-
-In Heidelberg, the required computer facilities and access to existing 
-simulations and the private \texttt{AREPO} code (of which Prof. Volker 
-Springel is the main author) is granted. Moreover, the extensive research 
-expertise of Prof. Springel in numerical cosmology is 
-certainly another interest for pursuing this specific PhD project.
-
-
-\begin{itemize}
-
-\item[\checkmark] \textit{Second, detailed simulations of specific processes at
-high redshifts will be computed.}
-
 \end{itemize}
 
+\subsection*{Second phase}
 
-Once the gaseous cosmic web is analysed, we proceed by computing its impact on 
-galaxy evolution, especially at high-redshifts due to the large amount of 
-available observational constraints. This step involves computing new high 
-resolution \texttt{AREPO} simulations in order to study specific processes 
-like: star formation rate enhanced by filamentary gas accretion, angular 
-momentum exchange between galaxies and the cosmic web, spin orientation of 
-galaxies along filaments and walls.
+- One first needs to compile recent results from numerical relativity simulations to get the
+most up-to-date fitting function for the strength of the recoil kicks as a function of BH
+mass ratio.
+- One then needs to implement an option in AREPO that adds a kick with the
+corresponding strength after the merger of two black holes.
+- Then, one repeats a cosmological simulation of galaxy formation with the kicks enabled,
+and compares to the equivalent one without kicks.
+- The quantities to focus on are, in particular, the galaxy luminosity function at the bright
+end, the BH mass function, and the color distribution of galaxies. Also interesting would
+be histograms that quantify the distance of BHs from the centre, the time of return to the
+centre, the number of free floating BHs, etc.
+- Implications for the merger rate of BHs, and the distribution of the mass ratios, would
+also be particularly interesting as this is directly related to the statistics of gravitational
+wave emission events.
 
-
-\begin{itemize}
-
-\item[\checkmark] \textit{Third, new observables will be derived based on the
-results of the simulations. }
-
-\end{itemize}
-
-
-At this point, we will compare our theoretical results with available 
-observational data of the cosmic web, specifically at high redshifts. This step 
-will also involve deriving new observables based on our predictions.
-
-
-%==============================================================================
-\section{Current State}
-%==============================================================================
-
-
-At present the applicant has already the fundamental knowledge in Astrophysics and
-Cosmology required for this investigation. This can be confirmed by his research
-experience, including a paper (as co-author) published in the \textit{ApJL} in 
-which the kinematics of the Local Group in a cosmological context was studied, 
-another paper (as co-author) published in the \textit{ApJ} where the influence of 
-thermal evolution on the magnetic habitability of rocky planets was studied,
-and some participations in academic congresses. Furthermore, a Bachelor's thesis
-\footnote{\scriptsize Further information and an electronic version of this 
-thesis can be found here \url{https://github.com/sbustamante/Thesis}.} where the 
-preferred place of simulated Local Group-like systems in the cosmic 
-web was studied, also demonstrates the ability of the applicant for handling 
-simulations and massive data, a skill that is necessary for carrying out this project.
-
-\
-
-Currently, the applicant is also involved in two research projects: first, a 
-new method for finding voids in simulations based on the local fractional 
-anisotropy is investigated. An ongoing publication (as first author) related to this is about 
-to be submitted\footnote{\scriptsize Information of this paper can be found 
-here \url{https://github.com/sbustamante/CosmicVoidsPaper}.}. The second project
-involves a comparison of three simulation techniques, i.e. \texttt{SPH} vs 
-\texttt{VPH} vs \texttt{AREPO}, with possible publishable results at the end of
-the present year \footnote{\scriptsize Further information in  
-\url{https://github.com/sbustamante/MethodsComparison}.}.
 
 
 %==============================================================================
