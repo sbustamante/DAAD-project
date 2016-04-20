@@ -107,14 +107,14 @@ black holes needs to be followed reasonably accurately.
 
 Whenever supermassive black holes merge during galaxy mergers, they emit a burst 
 of gravitational wave radiation. This happens in an symmetric way such that there
-is a quite large recoil, kicking the BH out of the centre. It could even happen 
+is a quite large recoil, kicking the BH out of the center. It could even happen 
 that the BH leaves the remnant halo entirely, but usually, it probably returns 
 after some time. During this period, the galaxy may then grow unimpeded by the BH. 
 We would like to find out how strongly predictions by galaxy formation are 
 modified when the BH recoil kicks are accounted for. To this end, one can apply 
 fitting functions produced by numerical relativity simulations to kick BH merger 
 remnants depending on their mass ratio, whenever this happens in a cosmological 
-simulation (see for example Sijacki et al., MNRAS, 2011, 414, 3656, arxiv:1008.3313). 
+simulation (see for example \citet{Sijacki2011}). 
 Combined with a treatment of BH friction, the BHs are then expected to return to 
 the centers after a finite time, so that these effects can be studied in modern 
 simulations of galaxy formation.
@@ -160,9 +160,10 @@ strengthened, weakened or even interrupted during merging processes.
 
 \item[\checkmark] Making statistical predictions, in a cosmological context, 
 of gravitational wave emissions produced by coalescing black hole pairs.
-This is very much important for current and future experiments such as LISA.
+This is very much important for current and future experiments such as LISA
 \footnote{Laser Interferometer Space Antenna for observing gravitational waves
-\url{https://www.elisascience.org/}.}
+\url{https://www.elisascience.org/}.}, where constrains from theoretical and
+numerical models are needed.
 
 
 \end{itemize}
@@ -177,30 +178,32 @@ One approach for improving the modelling would be to augment the equation of
 motion for the black hole particle by an explicit dynamical friction force. 
 This can be done in different ways.
 
-\begin{itemize} 
-\item One can try to add a suitably modified version of Chandrasekhar's dynamical 
-friction formula, similar to how this is attempted in Tremmel et al. (2015, MNRAS, 
-451, 1868, arxiv:1501.07609). This involves some assumptions and technical 
-approximations. In the formulation of Tremmel, they arranged it such that the 
-force becomes ever weaker in the limit of infinite resolution, so that one argue 
-it is a correction for the finite resolution of real-work simulations. However, 
-the tests presented in the paper are not fully convincing and it is still unclear 
-whether this method works sufficiently well in practice (e.g. for galaxy merger 
-simulations, and for cosmological simulations of galaxy formation).
+\begin{enumerate}
+ 
+\item One can try to add a suitably modified version of Chandrasekhar's 
+dynamical friction formula, similar to how this is attempted in \citet{Tremmel2015}. 
+This involves some assumptions and technical approximations. In the formulation 
+of Tremmel, they arranged it such that the force becomes ever weaker in the 
+limit of infinite resolution, so that one argue it is a correction for the finite 
+resolution of real-work simulations. However, the tests presented in the paper 
+are not fully convincing and it is still unclear whether this method works 
+sufficiently well in practice (e.g. for galaxy merger simulations, and for 
+cosmological simulations of galaxy formation).
 
 \item Because it is not really clear whether Chandrasekhar's formula applies 
-well when the BH is already close to the centre of the galaxy (where stars need 
-to be ejected from the 'loss-cone' and interactions with gas play a very important 
-role), one may instead also conjecture different models. For example, if we assume 
-that the BH is brought back efficiently to the potential minimum if it is displaced 
-from the centre, we can construct an 'optimum' friction force as follows: At the 
-centre, the gradient of the potential is zero by definition, so that it can be 
-approximated as quadratic to first order. The BH is hence expected to carry out 
-harmonic oscillations around the centre. We can now try to define an optimum damping 
-force that eliminates the oscillation on the shortest possible timescale (if the 
-friction is too large, the motion will be 'overdamped', and one takes longer to the 
-centre than for a suitably smaller force). We can estimate the potential around the 
-centre as $g(x) \sim \phi_0 + (1/2) (d^2\phi/dx^2) x^2$, and the second derivative
+well when the BH is already close to the center of the galaxy (where stars need 
+to be ejected from the 'loss-cone' and interactions with gas play a very important
+role), one may instead also conjecture different models. For example, if we assume
+that the BH is brought back efficiently to the potential minimum if it is 
+displaced from the center, we can construct an 'optimum' friction force as 
+follows: At the center, the gradient of the potential is zero by definition, so 
+that it can be approximated as quadratic to first order. The BH is hence expected 
+to carry out harmonic oscillations around the center. We can now try to define 
+an optimum damping force that eliminates the oscillation on the shortest possible 
+timescale (if the friction is too large, the motion will be 'overdamped', and 
+one takes longer to the center than for a suitably smaller force). We can 
+estimate the potential around the center as $g(x) \sim \phi_0 + (1/2) (d^2\phi
+/dx^2) x^2$, and the second derivative
 along one direction can be estimated from Poisson's equation as $(d^2\phi/dx^2) 
 \sim (1/3) (4 \pi G \rho)$, where $\rho$ is the local total mass density. The 
 harmonic oscillator's equation of motion will be $x'' = - \omega^2 x = - (dg/dx) x$, 
@@ -209,8 +212,7 @@ For a critical damping we would then need to add a friction force as $x'' =
 -\omega^2 x - k x'$, where $k = 2 \omega$. In this case, we expect the orbit to 
 decay on the local free fall timescale.
 
-
-\end{itemize}
+\end{enumerate}
 
 
 %==============================================================================
@@ -220,104 +222,65 @@ decay on the local free fall timescale.
 \subsection*{First phase}
 
 The second idea presented in the methodology section is already implemented in 
-the AREPO code in a first version, through the switch BH\_FRICTION. This 
-implementation tries to determine a reference velocity of the potential minimum 
-by measuring its position in the environment of the BH, and then taking finite 
-differences to estimate this velocity (this is needed because for applying the 
-friction force antiparallel to the velocity one needs to know the local reference 
-frame). The oscillation frequency is estimated from the total matter density, 
-and from this a friction force is estimated antiparallel to the velocity against 
-the local frame of rest, with a tunable coefficient in front of order unity.
-
-\begin{itemize} 
- 
-\item  As a first step, the implemented equations need to verified. This also requires that I
-explain you the many (in part quite complicated) technical aspects of the code that play a
-role here
-\item  We should then test the effects this implementation has, and how well it is working, in a
-number of situations:
+the AREPO \citep{Springel2010} code in a first version, through the switch 
+BH\_FRICTION. This implementation tries to determine a reference velocity of 
+the potential minimum by measuring its position in the environment of the BH, 
+and then taking finite differences to estimate this velocity (this is needed 
+because for applying the friction force antiparallel to the velocity one needs 
+to know the local reference frame). The oscillation frequency is estimated from 
+the total matter density, and from this a friction force is estimated 
+antiparallel to the velocity against the local frame of rest, with a tunable 
+coefficient in front of order unity.
 
 \begin{itemize}
 
+\item Simulations of Milky Way sized galaxies. Here, an important diagnostic 
+would be to develop a plot script that shows the distance of BHs relative to 
+the potential minima of the corresponding halos, which can be done based on the 
+group catalogs. First, one could look at the current state of affairs in some of 
+the finished production simulations of the group. Next, one should repeat one 
+or two of these runs by disabling the BH centering that had been used (to see 
+how bad the displacements get if one does not try to correct them). Finally, 
+one should try one or several variants of the friction treatments above,
+starting with method (2) and later also with method (1).
 
-\item Simulations of Milky Way sized galaxies. Here, an important diagnostic would be to
-develop a plot script that shows the distance of BHs relative to the potential minima of
-the
-corresponding halos. This can be done based on the group catalogues, I think. First, one
-could look at the current state of affairs in some of the finished production simulations of
-Rob and Ruediger. Next, one should repeat one or two of these runs by disabling the BH
-centering that had been used (to see how bad the displacements get if one doesn’t try to
-correct them). Finally, one should try one or several variants of the friction treatments
-above, starting with method (2) and later also with method (1).
+\item Toy simulations of an isolated halo where one injects a BH with some 
+velocity and impact parameter to study the decay of the orbit. Again, one should
+compare different friction treatments (ideally also at different resolution) 
+with the results where no treatment is applied.
 
-\item Toy simulations of an isolated halo where one injects a BH with some velocity and
-impact parameter to study the decay of the orbit. Again, one should compare different
-friction treatments (ideally also at different resolution) with the results where no such thing
-is applied.
-
-\item Finally, one repeats the test of (a) for a cosmological simulation, where one can
-compile statistical results, e.g. about the distribution function of the average distances of
-BHs to their halo centers.
-
-\end{itemize}
+\item Finally, one repeats the test of the first step for a cosmological 
+simulation, where one can compile statistical results, e.g. about the 
+distribution function of the average distances of BHs to their halo centers.
 
 \end{itemize}
+
 
 \subsection*{Second phase}
 
-- One first needs to compile recent results from numerical relativity simulations to get the
-most up-to-date fitting function for the strength of the recoil kicks as a function of BH
-mass ratio.
-- One then needs to implement an option in AREPO that adds a kick with the
+Once the first phase is done, where a method for following BH orbits in simulations
+is developed, we will proceed to estimate the effects of gravitational kicks 
+produced right after a merger event.
+
+\begin{itemize}
+
+\item One first needs to compile recent results from numerical relativity 
+simulations to get the most up-to-date fitting function for the strength of the 
+recoil kicks as a function of BH mass ratio.
+\item One then needs to implement an option in AREPO that adds a kick with the
 corresponding strength after the merger of two black holes.
-- Then, one repeats a cosmological simulation of galaxy formation with the kicks enabled,
-and compares to the equivalent one without kicks.
-- The quantities to focus on are, in particular, the galaxy luminosity function at the bright
-end, the BH mass function, and the color distribution of galaxies. Also interesting would
-be histograms that quantify the distance of BHs from the centre, the time of return to the
-centre, the number of free floating BHs, etc.
-- Implications for the merger rate of BHs, and the distribution of the mass ratios, would
-also be particularly interesting as this is directly related to the statistics of gravitational
-wave emission events.
+\item Then, one repeats a cosmological simulation of galaxy formation with the 
+kicks enabled, and compares to the equivalent one without kicks.
+\item The quantities to focus on are, in particular, the galaxy luminosity 
+function at the bright end, the BH mass function, and the color distribution of 
+galaxies. Also interesting would be histograms that quantify the distance of BHs 
+from the center, the time of return to the center, the number of free floating 
+BHs, etc.
+\item Implications for the merger rate of BHs, and the distribution of the mass 
+ratios, would also be particularly interesting as this is directly related to 
+the statistics of gravitational wave emission events.
 
-
-
-%==============================================================================
-\section{Schedule}
-%==============================================================================
-
-\begin{table}[h]
-\begin{flushleft}
-\begin{center}
-  \begin{tabular}{l  l} \hline\hline
-	\centering\textbf{Year} & \textbf{Goals} \\ \hline
-	%First year
-	First  
-	& \tabitem Identifying a set of existing \texttt{AREPO} simulations suitable 
-	for our studies. \\
-	& \tabitem Applying web finding schemes (T-web and V-web) to the simulations 
-	for\\
-	& \ \ \ \ quantifying structures in the gaseous cosmic web, i.e. voids, walls, 
-	filaments\\
-	& \ \ \ \ and clusters.\\
-	& \tabitem Evaluating properties of found structures at different redshifts.\\
-	\\
-	%Second year	
-	Second
-	& \tabitem Studying by means of high resolution simulations the impact of the 
-	gaseous\\
-	& \ \ \ \ cosmic web on specific galaxy evolution processes.\\
-	\\	
-	%Third year	
-	Third
-	& \tabitem Comparing with available observational data of the cosmic web.\\
-	& \tabitem Deriving new observable from our theoretical studies.\\ 
-	
-	\hline\hline
-  \end{tabular}  
-\end{center}
-\end{flushleft}
-\end{table}
+\end{itemize}
 
 \newpage
 %==============================================================================
@@ -326,6 +289,101 @@ wave emission events.
 \small
 \bibliography{references.bib}
 %==============================================================================
+
+
+\newpage
+
+%==============================================================================
+\section*{Schedule}
+%==============================================================================
+\begin{table}[!htbp]
+\begin{flushleft}
+\begin{center}
+\begin{footnotesize} 
+  \begin{tabular}{l  l  l} \hline\hline
+	\centering\textbf{Semester} & \textbf{Goals} & \textbf{Status} \\ \hline
+	%First year
+	First  
+	& \tabitem Pass the lecture of Theoretical Astrophysics.		& Done    \\
+	(WS15/16)
+	& \tabitem Pass the literature seminar (IMPRS seminar).			& Done    \\
+	& \tabitem Read and compile literature related to the project.     	& Done    \\
+	& \tabitem Run some basic AREPO simulations with the aim to get     	&         \\
+	& \ \ \ \ familiar with the code. 					& Done    \\
+	& \tabitem Study analytical models of dynamical friction, e.g. the   	&         \\
+	& \ \ \ \ Chandrasekhar's formula and comparing them with simple        &         \\
+	& \ \ \ \ simulations of isolated halos.  				& Done    \\
+	
+	\hline
+	Second
+	& \tabitem Get the admission from the University as a PhD student.  	& Done    \\
+	(SoS16)
+	& \tabitem Take the lecture of Observational techniques.  		& Ongoing \\
+	& \tabitem Take the second semester seminar (IMPRS seminar).  		& Ongoing \\
+	& \tabitem Implement an improved scheme in AREPO to find potential   	&	  \\
+	& \ \ \ \ minima of galaxies based on a multidimensional fitting.  	& Ongoing \\
+	& \tabitem Test different dynamical friction models in AREPO for   	&	  \\
+	& \ \ \ \ isolated galaxies.						& Ongoing \\
+	& \tabitem Run a cosmological simulation with an improved DF model.	& To be done \\
+	& \tabitem Make statistical analysis of the BH population in simulations.& To be done \\
+	& \tabitem Participate in a Summer school.  				& To be done \\
+	
+	\hline
+	Third
+	& \tabitem Take the lecture of Stellar Astrophysics.  			& \\
+	(WS16/17)
+	& \tabitem Write and (ideally) publish a first paper with the previous	& \\
+	& \ \ \ \ results.    							& \\
+	& \tabitem Read and compile literature of the second phase of the project.& \\
+	& \tabitem Compile recent results of numerical relativity simulations	& \\
+	& \ \ \ \ to get fitting functions of recoil kicks of BHs.    		& \\
+	& \tabitem Participate/Attend in a Conference.	  			& \\
+	\hline
+	
+	Fourth
+	& \tabitem Take a lecture of Advance Topics.	 			& \\
+	(SoS17)
+	& \tabitem Implement in AREPO an option that adds a kick after a merger	& \\
+	& \ \ \ \ event.							& \\
+	& \tabitem Run cosmological simulations where the kick option is fully	& \\
+	& \ \ \ \ implemented.							& \\
+	& \tabitem Make statistical analysis of the effects of gravitational	& \\
+	& \ \ \ \ recoils.							& \\
+	
+	\hline
+	Fifth
+	& \tabitem Study the implications of the previous results on galaxy	& \\
+	(WS17/18)
+	& \ \ \ \ properties.							& \\
+	& \tabitem Compile observational evidence in order to contrast with	& \\
+	& \ \ \ \ our findings.							& \\
+	& \tabitem Write a paper with these results.				& \\
+
+	\hline
+	Sixth
+	& \tabitem Teaching duty.						& \\
+	(SoS18)
+	& \tabitem Start writing the dissertation.				& \\
+	
+	\hline
+	Seventh
+	& \tabitem Continuing with the dissertation writing.			& \\
+	(WS18/19)
+	& \tabitem Prepare thesis defense.					& \\
+	\hline\hline
+	
+  \end{tabular}  
+\end{footnotesize}
+\end{center}
+\end{flushleft}
+\end{table}
+
+
+Supervisor:
+
+\
+
+Student:
 
 
 
