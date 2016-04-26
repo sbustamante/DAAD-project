@@ -28,12 +28,12 @@ to 04.16, correspond to my arrival in Heidelberg for starting my PhD.
 
 Regarding the first period, there is not much academic progress to report on as 
 I was focused on learning German. The only two exceptions perhaps were a 
-first-author paper I pu\-blished on 08.15 \citep{Bustamante15}
-\footnote{\url{http://mnras.oxfordjournals.org/content/453/1/497}} and a invited
-talk I gave at AIP (Leibniz-Institut f\"ur Astrophysik Potsdam) about the 
-results of the paper. Nevertheless, all the results reported in this work were 
-already developed during my studies in Colombia and the activities during my 
-stay in Berlin were limited to corrections of referee reports.
+first-author paper I pu\-blished in 08.15 \citep{Bustamante15}
+\footnote{\url{http://mnras.oxfordjournals.org/content/453/1/497}} and an invited
+talk I gave at AIP (Leibniz-Institut f\"ur Astrophysik Potsdam) about the paper. 
+Nevertheless, all the results reported in this work were already developed during 
+my studies in Colombia and the activities during my stay in Berlin were limited 
+to corrections of referee reports.
 
 \
 
@@ -41,7 +41,7 @@ For the second period there are several things to report on. These can be split-
 in 3 categories: general, corresponding to activities such as taking lectures 
 and seminars, getting the admission to the university, etc. Major project, which 
 is related to the main project I am developing with my supervisor, and finally, 
-a minor project developed with a postdoc from the group.
+a minor project developed with a postdoc of the group.
 
 
 %------------------------------------------------------------------------------
@@ -52,7 +52,7 @@ After my arrival in Heidelberg, the first step was to enrol to the University as
 a PhD student, however the assessment emitted by the HGFSP office (Heidelberg 
 Graduate School of Fundamental Physics) was to take preparatory studies before 
 being admitted as PhD student (this was because I do not hold a master's degree), 
-which means I had to take two core lectures from the master. Nevertheless, this 
+which means I had to take two core lectures of the master. Nevertheless, this 
 assessment was out of date as it corresponds to my old application in 2013. Since 
 then, I had taken 1 semester of master studies in Colombia and published a 
 first-author paper. Unfortunately, I had not brought documents to prove this, so
@@ -89,7 +89,8 @@ we visited the Konkoly Observatory.
 
 The initial project I submitted in 2014 when applying for the scholarship was
 about the study of the gaseous cosmic web in the context of the state-of-art 
-hydrodynamical simulations using AREPO code (e.g. Illustris simulation\footnote{}).
+hydrodynamical simulations using AREPO code (e.g. Illustris simulation\footnote{
+\url{http://www.illustris-project.org/}}).
 
 
 
@@ -98,13 +99,49 @@ hydrodynamical simulations using AREPO code (e.g. Illustris simulation\footnote{
 %------------------------------------------------------------------------------
 
 Additionally, a minor project has been going on during the previous semester, 
-which is being developed with a postdoc from the group at HITS (Martin Sparre).
-The objective of this project is to study the effect of minor mergers on the
-star formation rate of galaxies at different redshifts. For this purpose, a set
-zoom cosmological simulations (the Auriga project \citep{Grand16}) are used.
+which is being developed with a postdoc of the group at HITS (Martin Sparre).
+The goal of this project is to study the effect of minor mergers on the
+star formation rate of galaxies at different redshifts. This is important in
+the context of galaxy formation because high star formation rates in galaxies 
+at high redshifts remain unexplained. So far, there are several hypothesis 
+supporting this picture, namely, accretion of cold star forming gas through 
+infalling filamentary flows which are able to cross trough the shock-heated 
+regions around galaxies and penetrate towards the centre. A second hypothesis 
+consists of major merger events, where tidal forces compress the gas and 
+trigger star formation. Finally, we propose to study a third scenario, that is 
+not exclusive with the other two, but offers an appealing alternative as minor 
+merger events are very common and not as potentially destructive as major 
+mergers.
+
+%.........................................................................
+%FIGURE 3: Star formation rate
+\begin{figure}[!htbp]
+\centering
+
+  \includegraphics[trim = 0mm 0mm 0mm 0mm, clip, keepaspectratio=true,
+  width=0.57\textheight]{./figures/SFR.pdf}
+  
+  \caption{\small Star formation history for a galaxy in the Auriga project.
+  The peaks are associated to star bursts induced by major or minor mergers.}
+
+  \label{fig:SFR}
+
+\end{figure}
+%.........................................................................
+
+For the purpose of this project, we use a set of zoom cosmological simulations 
+(the Auriga project), where several galaxies have been simulated with very high
+resolutions from sub-boxes of the Illustris simulation (see more details in
+\citet{Grand16})). So far, several analysis scripts have been developed using 
+the library MergerZoomAnalysis\footnote{
+\url{https://bitbucket.org/martinsparre/mergerzoomanalysis}} of Martin Sparre. 
+For example, in figure \ref{fig:SFR} it is shown the star formation history of 
+one of the simulated galaxies, where the peaks correspond to star bursts induced 
+by minor or major mergers. My current objective is then to develop a method to 
+track minor merger events and correlate them with star bursts in the star 
+formation history.
 
 
-\newpage
 %==============================================================================
 \bibliographystyle{latex/mn2e}
 \renewcommand{\bibname}{8\ \ \ \ Bibliography}
