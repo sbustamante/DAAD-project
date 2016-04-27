@@ -61,10 +61,10 @@ More detailed information of the applicant can be found here \url{http://goo.gl/
 
 
 The modelling of supermassive black holes in the center of galaxies is an important 
-enterprise to be carried out as they play a central role in the current understanding
-of start formation theories. However, simulating such processes in a cosmological 
+topic to be carried out as they play a central role in the current understanding
+of galaxy formation theories. However, simulating such processes in a cosmological 
 context is not an easy task due to the limited numerical resolution achieved by 
-current state-of-art computing systems. One of our objective is to show that at 
+current state-of-art computing systems. One of our objectives is to show that at 
 typically employed numerical resolutions, the orbits of sink particles used to 
 represent supermassive black holes in simulations can be quite unreliable, as a 
 result of two-body effects, fluctuating gravitational potentials and noisy 
@@ -160,7 +160,7 @@ strengthened, weakened or even interrupted during merging processes.
 
 \item[\checkmark] Making statistical predictions, in a cosmological context, 
 of gravitational wave emissions produced by coalescing black hole pairs.
-This is very much important for current and future experiments such as LISA
+This is very important for current and future experiments such as LISA
 \footnote{Laser Interferometer Space Antenna for observing gravitational waves
 \url{https://www.elisascience.org/}.}, where constrains from theoretical and
 numerical models are needed.
@@ -221,8 +221,8 @@ decay on the local free fall timescale.
 
 \subsection*{First phase}
 
-The second idea presented in the methodology section is already implemented in 
-the AREPO \citep{Springel2010} code in a first version, through the switch 
+The second idea presented in the methodology section is already implemented by us
+in the AREPO \citep{Springel2010} code in a first version, through the switch 
 BH\_FRICTION. This implementation tries to determine a reference velocity of 
 the potential minimum by measuring its position in the environment of the BH, 
 and then taking finite differences to estimate this velocity (this is needed 
@@ -237,11 +237,11 @@ coefficient in front of order unity.
 \item Simulations of Milky Way sized galaxies. Here, an important diagnostic 
 would be to develop a plot script that shows the distance of BHs relative to 
 the potential minima of the corresponding halos, which can be done based on the 
-group catalogs. First, one could look at the current state of affairs in some of 
-the finished production simulations of the group. Next, one should repeat one 
+group catalogs. First, we plan to look at the current state of affairs in some of 
+the finished production simulations of the group. Next, one can repeat one 
 or two of these runs by disabling the BH centering that had been used (to see 
 how bad the displacements get if one does not try to correct them). Finally, 
-one should try one or several variants of the friction treatments above,
+we plan to try one or several variants of the friction treatments above,
 starting with method (2) and later also with method (1).
 
 \item Toy simulations of an isolated halo where one injects a BH with some 
@@ -249,7 +249,7 @@ velocity and impact parameter to study the decay of the orbit. Again, one should
 compare different friction treatments (ideally also at different resolution) 
 with the results where no treatment is applied.
 
-\item Finally, one repeats the test of the first step for a cosmological 
+\item Finally, we plan to repeat the test of the first step for a cosmological 
 simulation, where one can compile statistical results, e.g. about the 
 distribution function of the average distances of BHs to their halo centers.
 
@@ -267,10 +267,10 @@ produced right after a merger event.
 \item One first needs to compile recent results from numerical relativity 
 simulations to get the most up-to-date fitting function for the strength of the 
 recoil kicks as a function of BH mass ratio.
-\item One then needs to implement an option in AREPO that adds a kick with the
+\item We then need to implement an option in AREPO that adds a kick with the
 corresponding strength after the merger of two black holes.
-\item Then, one repeats a cosmological simulation of galaxy formation with the 
-kicks enabled, and compares to the equivalent one without kicks.
+\item Then, we repeat a cosmological simulation of galaxy formation with the 
+kicks enabled, and compare to the equivalent one without kicks.
 \item The quantities to focus on are, in particular, the galaxy luminosity 
 function at the bright end, the BH mass function, and the color distribution of 
 galaxies. Also interesting would be histograms that quantify the distance of BHs 
@@ -379,11 +379,11 @@ the statistics of gravitational wave emission events.
 \end{table}
 
 
-Supervisor:
+%Supervisor:
 
 \
 
-Student:
+%Student:
 
 
 

@@ -61,9 +61,9 @@ it was decided by my Thesis Committee that I should take one of the core lecture
 during the first semester, so I decided to take Theoretical Astrophysics.
 
 At the end of the semester, I finally got the documents, so I immediately 
-submitted to the HGFSP office and one week later I was officially admitted as a
-PhD student in the University of Heidelberg. It is worth mentioning that I also
-finished the lecture, which included homework and a final examination.
+submitted them to the HGFSP office and one week later I was officially admitted 
+as a PhD student in the University of Heidelberg. It is worth mentioning that I 
+also finished the lecture, which included homework and a final examination.
 
 \
 
@@ -87,13 +87,158 @@ we visited the Konkoly Observatory.
 \subsection{Major Project}
 %------------------------------------------------------------------------------
 
-The initial project I submitted in 2014 when applying for the scholarship was
-about the study of the gaseous cosmic web in the context of the state-of-art 
-hydrodynamical simulations using AREPO code (e.g. Illustris simulation\footnote{
-\url{http://www.illustris-project.org/}}).
+The initial project I submitted in 2014 for the application to the scholarship 
+was about the study of the gaseous cosmic web in the context of the state-of-art 
+hydrodynamical simulations using AREPO code \citep{Springel2010} (e.g. Illustris 
+simulation\footnote{\url{http://www.illustris-project.org/}}). However, after
+my arrival in Heidelberg and during my first meeting with my supervisor, it was 
+decided to change the focus of the main project to study dynamical friction of
+supermassive black holes in the centres of galaxies in order to make predictions 
+of gravitational-wave emissions in a cosmological context. The main reason for 
+this decision was that black hole physics was going to become a very trendy topic 
+in the light of the forthcoming gravitational wave experiments (e.g. LIGO 
+\footnote{Laser Interferometer Gravitational-Wave Observatory, 
+\url{https://www.ligo.caltech.edu/}}), and robust predictions are going to be 
+needed from theoretical and numerical models. Nowadays, with the confirmed discovery 
+of gravitational waves by the LIGO team, the change of course proved to be a very 
+wise judgement.
+
+With the new project already defined, I proceeded to compile and read references
+about the topic, and, along with my supervisor, to write a new research proposal
+to be submitted to the DAAD (this document is attached in the appendices).
+
+\
+
+In the first two months, I was focused on comprehending the process of dynamical 
+friction and how it operates in the context of galaxy dynamics. This was an
+important step because this process drives the orbital decay of supermassive 
+black holes, specially after a galaxy merger, where two or more black holes 
+coalesce after emitting a burst of gravitational waves. For the purpose of 
+understanding this process, I developed some scripts in python and a small 
+N-body code\footnote{\url{https://github.com/sbustamante/N-body}} to study how 
+numerical resolution effects influence the trajectory of a massive body embedded 
+in some background medium composed of slightly lighter particles, which is 
+indeed a fair approximation to the real problem faced when simulating 
+supermassive black holes in galaxies.
+
+\
+
+Once this initial stage was successfully done, I moved on to use the 
+hydrodynamic code AREPO to simulate isolated galaxies and merger events (see
+figure \ref{fig:simulations}), which, although yet simplistic, were closer 
+to the original problem that we want to solve. The objective with this 
+exercise was to get familiar with the code and understand the problems with 
+the current treatment of supermassive black holes \citep{Springel11}, where 
+their position are glued to the potential minimum of the galaxy. 
+This approach has proven to be numerically stable, yet unrealistic.
 
 
+%.........................................................................
+%FIGURE 1: Galaxies
+\begin{figure}[!htbp]
+\centering
 
+  \includegraphics[trim = 0mm 0mm 0mm 0mm, clip, keepaspectratio=true,
+  width=0.60\textheight]{./figures/Galaxies.png}
+  
+  \caption{\small Left panel: isolated galaxy with a supermassive black 
+  hole in the centre (red dot). Right panel: a merger of two galaxies 
+  after a first passage. Two black holes are shown in the centre of each
+  galaxy.}
+
+  \label{fig:simulations}
+
+\end{figure}
+%.........................................................................
+
+\
+
+The last three months were dedicated to devise an improved treatment for the 
+dynamical friction experienced by supermassive black holes in numerical 
+simulations. In this regard, the main problem emerges when one tries to simulate
+a continuous stars and gas background using large sampling particles, with a size 
+comparable to the black hole. This produces unrealistic orbits, where stochastic 
+numerical heating prevails rather than a smooth decay as expected from dynamical
+friction driven trajectories. The described procedure is unfortunately necessary 
+due to the limited computing power achieved by modern computers. That is the 
+reason why sub-grid semi-analytic models are always required. 
+
+\
+
+Several approaches have been proposed throughout the literature, namely glueing 
+the position of the black hole to the potential minimum, as mentioned above. 
+Using an improved version of the Chandrasekhar formula, where only the closer 
+neighbour particles are used to compute the distribution function of the 
+background \citep{Tremmel2015}. We also introduced and implemented (in AREPO)
+our own approach, where an effective drag force is estimated assuming an 
+overdamped decay which follows the velocity of the potential minimum. Although 
+this method is only partially physically motivated, it is indeed an effective 
+way to yield decaying orbits, even for low resolutions.
+
+\
+
+During this time, I also devised a set of numerical experiments to test our 
+approach. It consists of simulating a black hole particle embedded in an 
+isolated dark matter halo that follows a Hernquist profile 
+\citep{Hernquist1990}. This has two important advantages: firstly, this profile 
+is stationary, meaning that there is not transient or numerical relaxation, 
+and secondly, it has analytical profiles for the density, the potential and 
+the velocity distribution function. Both features facilitate enormously 
+comparison between numerical results and analytical predictions.
+
+
+%.........................................................................
+%FIGURE 2: Dynamical friction decay
+\begin{figure}[!htbp]
+\centering
+
+  \includegraphics[trim = 0mm 0mm 0mm 0mm, clip, keepaspectratio=true,
+  width=0.7\textheight]{./figures/Results.png}
+  
+  \caption{\small Left panel: numerical simulations of the decay of a 
+  supermassive black hole in a circular orbit, without using our approach
+  (black line), and using it (grey line). Right panel: evolution of the
+  radial component for the orbit of the black hole, using the numerical
+  orbits (black and grey lines) and analytical integrations for a pure
+  Chandrasekhar friction force (red line) and for a overdamped drag force
+  (blue line).}
+
+  \label{fig:dynamical_friction}
+
+\end{figure}
+%.........................................................................
+
+
+It is shown in figure \ref{fig:dynamical_friction} the results of our numerical
+integration and the corresponding analytical predictions. It is worth noting 
+that we were using a rather high resolution ($1\times 10^6$ particles), so it 
+is expected that dynamical friction is accounted for at some extent. Indeed, a 
+decay is observed for the case without an effective drag force and the orbit 
+is close to the one predicted analytically using the Chandrasekhar formula with 
+a correction for the maximum impact parameter \citep{Just2011}. In the case 
+when the drag force is activated, the numerical result and the analytical 
+prediction are different. However, the numerical orbit exhibits a faster decay 
+and is less noisy once it gets close to the centre. Further study in this direction 
+is necessary to fine tune our drag friction force to reproduce realistic decay 
+times.
+
+\
+
+Finally, a last problem we are currently working on is related to tracking 
+the trajectory of the potential minimum of a galaxy, which is an essential step 
+for our approach as the drag force is precisely given from that frame of 
+reference. The method currently in use consists of following the most bound 
+particle. Nevertheless, due to numerical noise, this has shown to be numerically 
+unstable, producing levels of noise comparable with the resolution effects that 
+we want precisely to deal with. The alternative that is being now developed 
+consists of fitting the potential field around the black hole using a least 
+squares multidimensional minimization with the neighbour particles, which might
+offer a more stable solution for the potential minimum trajectory. Once this
+approach, along with the effective drag force, are working, our short-term plans 
+are to run a cosmological simulation and write a first paper about the results.
+
+
+\newpage
 %------------------------------------------------------------------------------
 \subsection{Minor Project}
 %------------------------------------------------------------------------------
@@ -119,7 +264,7 @@ mergers.
 \centering
 
   \includegraphics[trim = 0mm 0mm 0mm 0mm, clip, keepaspectratio=true,
-  width=0.57\textheight]{./figures/SFR.pdf}
+  width=0.7\textheight]{./figures/SFR.pdf}
   
   \caption{\small Star formation history for a galaxy in the Auriga project.
   The peaks are associated to star bursts induced by major or minor mergers.}
